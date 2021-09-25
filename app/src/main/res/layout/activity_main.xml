@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,13 +7,271 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <!--Today's Total Kcal Row-->
     <TextView
+        android:id="@+id/label_today_total_kcal"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+
+        android:text="@string/activity_main_label_today_total_kcal"
+        android:textSize="20sp"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container_value_today_total_kcal"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_today_total_kcal">
+
+        <TextView
+            android:id="@+id/value_today_total_kcal"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            android:text="@string/activity_main_dummy_today_total_kcal"
+
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            android:text="@string/shared_label_kcal"
+            android:textSize="30sp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!--Today's Diary Log-->
+    <LinearLayout
+        android:id="@+id/label_diary_log_today"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_value_today_total_kcal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shared_label_name"
+            android:textStyle="bold"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="64dp"
+            android:text="@string/shared_label_kcal"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shared_label_time"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_diary_log_today"
+
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        app:layout_constraintTop_toBottomOf="@id/label_diary_log_today"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </LinearLayout>
+
+    <!--Eat Row-->
+    <Button
+        android:id="@+id/button_eat"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="@color/safkaLog_blue"
+        android:text="@string/activity_main_button_eat"
+
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toBottomOf="@id/container_diary_log_today"
+        app:layout_constraintEnd_toStartOf="@id/button_eat_edit"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/button_eat_edit"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/safkaLog_red"
+
+        android:text="@string/activity_main_button_edit"
+        android:textAllCaps="false"
+
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toBottomOf="@id/container_diary_log_today"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_eat"/>
+
+    <!--Ingredients Row-->
+    <Button
+        android:id="@+id/button_ingredients"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="@color/safkaLog_blue"
+        android:text="@string/activity_main_button_ingredients"
+
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toStartOf="@id/button_ingredients_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_eat" />
+
+    <Button
+        android:id="@+id/button_ingredients_edit"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/safkaLog_red"
+
+        android:text="@string/activity_main_button_edit"
+        android:textAllCaps="false"
+
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_ingredients"
+        app:layout_constraintTop_toBottomOf="@id/button_eat" />
+
+    <!--Recipes Row-->
+    <Button
+        android:id="@+id/button_recipes"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="@color/safkaLog_blue"
+        android:text="@string/activity_main_button_recipes"
+
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toStartOf="@id/button_recipes_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_ingredients" />
+
+    <Button
+        android:id="@+id/button_recipes_edit"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/safkaLog_red"
+
+        android:text="@string/activity_main_button_edit"
+        android:textAllCaps="false"
+
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_recipes"
+        app:layout_constraintTop_toBottomOf="@id/button_ingredients" />
+
+    <!--Diary Row-->
+    <Button
+        android:id="@+id/button_diary"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="@color/safkaLog_blue"
+        android:text="@string/activity_main_button_diary"
+
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toStartOf="@id/button_diary_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_recipes" />
+
+    <Button
+        android:id="@+id/button_diary_edit"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/safkaLog_red"
+
+        android:text="@string/activity_main_button_edit"
+        android:textAllCaps="false"
+
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_diary"
+        app:layout_constraintTop_toBottomOf="@id/button_recipes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

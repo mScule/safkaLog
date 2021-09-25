@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">safkalog</string>
+
+    <!--Shared-->
+    <string name="shared_label_name">name</string>
+    <string name="shared_label_kcal">kcal</string>
+    <string name="shared_label_time">time</string>
+
+    <!--MainActivity-->
+    <string name="activity_main_label_today_total_kcal">Today</string>
+    <string name="activity_main_dummy_today_total_kcal">0.0</string>
+
+    <string name="activity_main_button_eat">eat</string>
+    <string name="activity_main_button_ingredients">ingredients</string>
+    <string name="activity_main_button_recipes">recipes</string>
+    <string name="activity_main_button_diary">diary</string>
+    <string name="activity_main_button_edit">edit</string>
 </resources>

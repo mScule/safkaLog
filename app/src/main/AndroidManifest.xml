@@ -10,6 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Safkalog">
         <activity
+            android:name=".DiaryLogActivity"
+            android:parentActivityName=".DiaryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DiaryActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecipesActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".IngredientsActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EatActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
