@@ -1,8 +1,10 @@
-package com.ahkera.safkalog;
+package com.ahkera.safkalog.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ahkera.safkalog.R;
 
 public class DiaryLogActivity extends AppCompatActivity {
 

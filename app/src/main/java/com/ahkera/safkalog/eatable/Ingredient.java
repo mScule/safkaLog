@@ -2,7 +2,7 @@ package com.ahkera.safkalog.eatable;
 
 import androidx.annotation.NonNull;
 
-public class Ingredient {
+public class Ingredient extends Eatable {
     private String name;
     private int kcal;
 
@@ -19,12 +19,14 @@ public class Ingredient {
         this.kcal = kcal;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    int getKcal() {
+        return kcal;
     }
 
-    public int getKcal() {
-        return kcal;
+    @Override
+    String getName() {
+        return name;
     }
 
     @NonNull

@@ -2,17 +2,29 @@ package com.ahkera.safkalog.eatable;
 
 import java.util.ArrayList;
 
-public class Recipe extends Ingredient {
+public class Recipe extends Eatable {
+
+    private String name;
 
     private ArrayList<EatableUnit> ingredients;
 
     public Recipe(String name, ArrayList<EatableUnit> ingredients) {
-        super(name,0);
+        this.name = name;
+        this.ingredients = ingredients;
+    }
 
-        int totalKcal = 0;
-        for(EatableUnit ingredient : ingredients) {
-            int kcal = ingredient.getIngredient().getKcal();
+    @Override
+    int getKcal() {
+        int kcalTotal = 0;
 
-        }
+        for(EatableUnit unit : ingredients)
+            kcalTotal += unit.getKcal();
+
+        return kcalTotal;
+    }
+
+    @Override
+    String getName() {
+        return name;
     }
 }

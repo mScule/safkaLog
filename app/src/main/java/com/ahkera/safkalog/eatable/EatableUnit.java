@@ -1,19 +1,21 @@
 package com.ahkera.safkalog.eatable;
 
-public class EatableUnit {
-    private Ingredient ingredient;
+public class EatableUnit extends Eatable {
+    private Eatable eatable;
     private int grams;
 
-    public EatableUnit(Ingredient ingredient, int grams) {
-        this.ingredient = ingredient;
+    public EatableUnit(Eatable eatable, int grams) {
+        this.eatable = eatable;
         this.grams = grams;
     }
 
-    public Ingredient getIngredient() {
-        return ingredient;
+    @Override
+    public String getName() {
+        return eatable.getName();
     }
 
-    public int getGrams() {
-        return grams;
+    @Override
+    public int getKcal() {
+        return grams * eatable.getKcal() / 100;
     }
 }

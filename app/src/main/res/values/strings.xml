@@ -1,10 +1,20 @@
 <resources>
     <string name="app_name">safkalog</string>
 
+    <!--Emojis-->
+    <string name="emoji_edit">&#128221;</string>
+    <string name="emoji_delete">&#128293;</string>
+    <string name="emoji_food">&#127849;</string>
+    <string name="emoji_drink">&#9749;</string>
+    <string name="emoji_recipe">&#128220;</string>
+
     <!--Shared-->
     <string name="shared_label_name">name</string>
     <string name="shared_label_kcal">kcal</string>
     <string name="shared_label_time">time</string>
+    <string name="shared_label_grams">grams</string>
+    <string name="shared_label_type">type</string>
+    <string name="shared_button_add">add</string>
 
     <!--MainActivity-->
     <string name="activity_main_label_today_total_kcal">Today</string>

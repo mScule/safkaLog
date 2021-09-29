@@ -19,9 +19,8 @@ public class DiaryDate {
     private void refreshKcalTotal() {
         kcalSum = 0;
 
-        for(DiaryLog log : logs) {
-            kcalSum += log.getIngredient().getKcal();
-        }
+        for(DiaryLog log : logs)
+            kcalSum += log.getEatableUnit().getKcal();
     }
 
     public void addLog(DiaryLog log) {
@@ -34,7 +33,9 @@ public class DiaryDate {
         refreshKcalTotal();
     }
 
-    public ArrayList<DiaryLog> getLogs() { return logs; }
+    public ArrayList<DiaryLog> getLogs() {
+        return logs;
+    }
 
     public Date getDate() {
         return date;
