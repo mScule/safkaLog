@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView
                     name = logRow.findViewById(R.id.it_diaryLog_tv_eatableName),
                     kcal = logRow.findViewById(R.id.it_diaryLog_tv_eatableKcal),
-                    time = logRow.findViewById(R.id.it_diaryLog_tv_time);
+                    time = logRow.findViewById(R.id.it_diaryLog_tv_logTime);
 
                 name.setText(log.getEatableUnit().getName());
                 kcal.setText(Integer.toString(log.getEatableUnit().getKcal()));
