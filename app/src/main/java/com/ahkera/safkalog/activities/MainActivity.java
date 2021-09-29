@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 View logRow = getLayoutInflater().inflate(R.layout.item_diary_log, null);
 
                 TextView
-                    name = logRow.findViewById(R.id.row_diary_log_name),
-                    kcal = logRow.findViewById(R.id.row_diary_log_kcal),
-                    time = logRow.findViewById(R.id.row_diary_log_time);
+                    name = logRow.findViewById(R.id.it_diaryLog_tv_eatableName),
+                    kcal = logRow.findViewById(R.id.it_diaryLog_tv_eatableKcal),
+                    time = logRow.findViewById(R.id.it_diaryLog_tv_time);
 
                 name.setText(log.getEatableUnit().getName());
                 kcal.setText(Integer.toString(log.getEatableUnit().getKcal()));

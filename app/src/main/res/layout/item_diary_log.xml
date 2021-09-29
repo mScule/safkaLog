@@ -12,7 +12,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/row_diary_log_name"
+        android:id="@+id/it_diaryLog_tv_eatableName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -22,13 +22,13 @@
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/row_diary_log_kcal"
+        android:id="@+id/it_diaryLog_tv_eatableKcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingEnd="64dp"/>
 
     <TextView
-        android:id="@+id/row_diary_log_time"
+        android:id="@+id/it_diaryLog_tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_margin="16dp">
 
     <TextView
-        android:id="@+id/row_eatable_emoji_eatable_type"
+        android:id="@+id/it_eatable_tv_logType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -17,7 +17,7 @@
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/row_eatable_value_eatable_name"
+        android:id="@+id/it_eatable_tv_logName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

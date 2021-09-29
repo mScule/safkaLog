@@ -1,28 +1,30 @@
 <resources>
-    <string name="app_name">safkalog</string>
-
-    <!--Emojis-->
-    <string name="emoji_edit">&#128221;</string>
-    <string name="emoji_delete">&#128293;</string>
-    <string name="emoji_food">&#127849;</string>
-    <string name="emoji_drink">&#9749;</string>
-    <string name="emoji_recipe">&#128220;</string>
+    <string name="app_name">SafkaLog</string>
 
     <!--Shared-->
-    <string name="shared_label_name">name</string>
-    <string name="shared_label_kcal">kcal</string>
-    <string name="shared_label_time">time</string>
-    <string name="shared_label_grams">grams</string>
-    <string name="shared_label_type">type</string>
-    <string name="shared_button_add">add</string>
+    <string name="sh_em_edit">&#128221;</string>
+    <string name="sh_em_delete">&#128293;</string>
+    <string name="sh_em_food">&#127849;</string>
+    <string name="sh_em_drink">&#9749;</string>
+    <string name="sh_em_recipe">&#128220;</string>
+
+    <string name="sh_lb_name">Name</string>
+    <string name="sh_lb_kcal">Kcal</string>
+    <string name="sh_lb_time">Time</string>
+    <string name="sh_lb_grams">Grams</string>
+    <string name="sh_lb_type">Type</string>
+    <string name="sh_lb_kcalPer100Grams">Kcal/100g</string>
+
+    <string name="sh_btn_add">Add</string>
 
     <!--MainActivity-->
-    <string name="activity_main_label_today_total_kcal">Today</string>
-    <string name="activity_main_dummy_today_total_kcal">0.0</string>
+    <string name="ac_main_tv_todayTotalKcal">Today</string>
+    <string name="ac_main_tv_totalKcalDummy">0.0</string>
 
-    <string name="activity_main_button_eat">eat</string>
-    <string name="activity_main_button_ingredients">ingredients</string>
-    <string name="activity_main_button_recipes">recipes</string>
-    <string name="activity_main_button_diary">diary</string>
-    <string name="activity_main_button_edit">edit</string>
+    <string name="ac_main_btn_eat">Eat</string>
+    <string name="ac_main_btn_ingredients">Ingredients</string>
+    <string name="ac_main_btn_recipes">Recipes</string>
+    <string name="ac_main_btn_diary">Diary</string>
+    <string name="ac_main_btn_edit">Edit</string>
+
 </resources>

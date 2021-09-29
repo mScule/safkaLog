@@ -12,6 +12,14 @@ import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.eatable.Ingredient;
 import com.ahkera.safkalog.global.Global;
 
+
+/** @author Vilhelm
+ *
+ * This activity is finished.
+ *
+ * It works by asking the user to give the name and kcals per 100g from to user.
+*/
+
 public class IngredientsActivity extends AppCompatActivity {
 
     private EditText inputName, inputKcal;
@@ -21,8 +29,8 @@ public class IngredientsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredients);
 
-        inputName = findViewById(R.id.activity_ingredients_input_name);
-        inputKcal = findViewById(R.id.activity_ingredients_input_kcal);
+        inputName = findViewById(R.id.ac_ingredients_et_name);
+        inputKcal = findViewById(R.id.ac_ingredients_et_kcal);
     }
 
     public void addIngredient(View view) {

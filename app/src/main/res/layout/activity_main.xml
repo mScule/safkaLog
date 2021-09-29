@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
 
-        android:text="@string/activity_main_label_today_total_kcal"
+        android:text="@string/ac_main_tv_todayTotalKcal"
         android:textSize="20sp"
 
         app:layout_constraintLeft_toLeftOf="parent"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginTop="16dp"
-            android:text="@string/activity_main_dummy_today_total_kcal"
+            android:text="@string/ac_main_tv_totalKcalDummy"
 
             android:textSize="30sp" />
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginTop="16dp"
-            android:text="@string/shared_label_kcal"
+            android:text="@string/sh_lb_kcal"
             android:textSize="30sp"
 
             android:textStyle="bold" />
@@ -84,7 +84,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shared_label_name"
+            android:text="@string/sh_lb_name"
             android:textStyle="bold"/>
 
         <Space
@@ -96,13 +96,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingEnd="64dp"
-            android:text="@string/shared_label_kcal"
+            android:text="@string/sh_lb_kcal"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shared_label_time"
+            android:text="@string/sh_lb_time"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -134,7 +134,7 @@
 
         android:backgroundTint="@color/safkaLog_blue"
 
-        android:text="@string/activity_main_button_eat"
+        android:text="@string/ac_main_btn_eat"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -152,7 +152,7 @@
 
         android:backgroundTint="@color/safkaLog_red"
 
-        android:text="@string/emoji_edit"
+        android:text="@string/sh_em_edit"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -174,7 +174,7 @@
 
         android:backgroundTint="@color/safkaLog_blue"
 
-        android:text="@string/activity_main_button_ingredients"
+        android:text="@string/ac_main_btn_ingredients"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -192,7 +192,7 @@
 
         android:backgroundTint="@color/safkaLog_red"
 
-        android:text="@string/emoji_edit"
+        android:text="@string/sh_em_edit"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -214,7 +214,7 @@
 
         android:backgroundTint="@color/safkaLog_blue"
 
-        android:text="@string/activity_main_button_recipes"
+        android:text="@string/ac_main_btn_recipes"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -232,7 +232,7 @@
 
         android:backgroundTint="@color/safkaLog_red"
 
-        android:text="@string/emoji_edit"
+        android:text="@string/sh_em_edit"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -254,7 +254,7 @@
 
         android:backgroundTint="@color/safkaLog_blue"
 
-        android:text="@string/activity_main_button_diary"
+        android:text="@string/ac_main_btn_diary"
         android:textAllCaps="false"
         android:textSize="20sp"
 
@@ -272,7 +272,7 @@
 
         android:backgroundTint="@color/safkaLog_red"
 
-        android:text="@string/emoji_edit"
+        android:text="@string/sh_em_edit"
         android:textAllCaps="false"
         android:textSize="20sp"
 
