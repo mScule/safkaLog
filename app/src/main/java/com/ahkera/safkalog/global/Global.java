@@ -29,5 +29,13 @@ public class Global {
         diaryDateToday.addLog(new DiaryLog(new EatableUnit(
                 new Ingredient("Remix karkkipussi", 355), 25
         )));
+
+        diaryDateToday.addLog(new DiaryLog(new EatableUnit(
+                new Ingredient("Big mac", 500), 150
+        )));
+
+        diaryDateToday.addLog(new DiaryLog(new EatableUnit(
+                new Ingredient("Limu", 45), 330
+        )));
     }
 }

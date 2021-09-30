@@ -17,7 +17,7 @@
 
     <!--Today's Total Kcal Row-->
     <TextView
-        android:id="@+id/activity_main_label_today_total_kcal"
+        android:id="@+id/ac_main_tv_todayTotalKcal"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/activity_main_container_value_today_total_kcal"
+        android:id="@+id/ac_main_ll_valueTodayTotalKcal"
 
         android:layout_width="wrap_content"
 
@@ -40,10 +40,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_main_label_today_total_kcal">
+        app:layout_constraintTop_toBottomOf="@id/ac_main_tv_todayTotalKcal">
 
         <TextView
-            android:id="@+id/activity_main_value_today_total_kcal"
+            android:id="@+id/ac_main_tv_todayTotalKcalValue"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
 
     <!--Today's Diary Log-->
     <LinearLayout
-        android:id="@+id/activity_main_label_diary_log_today"
+        android:id="@+id/ac_main_ll_diaryLogTodayLabels"
 
         android:layout_width="match_parent"
 
@@ -79,7 +79,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_main_container_value_today_total_kcal">
+        app:layout_constraintTop_toBottomOf="@id/ac_main_ll_valueTodayTotalKcal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,8 +106,8 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/activity_main_container_diary_log_today"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ac_main_rv_diaryLogsToday"
 
         android:orientation="vertical"
 
@@ -117,14 +117,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_label_diary_log_today"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_ll_diaryLogTodayLabels"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <!--Eat Row-->
     <Button
-        android:id="@+id/activity_main_button_eat"
+        android:id="@+id/ac_main_btn_eat"
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -140,11 +140,11 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_container_diary_log_today"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_rv_diaryLogsToday"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_main_button_eat_edit" />
+        app:layout_constraintEnd_toStartOf="@id/ac_main_btn_eatEdit" />
     <Button
-        android:id="@+id/activity_main_button_eat_edit"
+        android:id="@+id/ac_main_btn_eatEdit"
 
         android:layout_width="55dp"
         android:layout_height="wrap_content"
@@ -158,13 +158,13 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_container_diary_log_today"
-        app:layout_constraintStart_toEndOf="@id/activity_main_button_eat"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_rv_diaryLogsToday"
+        app:layout_constraintStart_toEndOf="@id/ac_main_btn_eat"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!--Ingredients Row-->
     <Button
-        android:id="@+id/activity_main_button_ingredients"
+        android:id="@+id/ac_main_btn_ingredients"
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -180,11 +180,11 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_eat"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_eat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_main_button_ingredients_edit" />
+        app:layout_constraintEnd_toStartOf="@id/ac_main_btn_ingredientsEdit" />
     <Button
-        android:id="@+id/activity_main_button_ingredients_edit"
+        android:id="@+id/ac_main_btn_ingredientsEdit"
 
         android:layout_width="55dp"
         android:layout_height="wrap_content"
@@ -198,13 +198,13 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_eat"
-        app:layout_constraintStart_toEndOf="@id/activity_main_button_ingredients"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_eat"
+        app:layout_constraintStart_toEndOf="@id/ac_main_btn_ingredients"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!--Recipes Row-->
     <Button
-        android:id="@+id/activity_main_button_recipes"
+        android:id="@+id/ac_main_btn_recipes"
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -220,11 +220,11 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_ingredients"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_ingredients"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_main_button_recipes_edit" />
+        app:layout_constraintEnd_toStartOf="@id/ac_main_btn_recipesEdit" />
     <Button
-        android:id="@+id/activity_main_button_recipes_edit"
+        android:id="@+id/ac_main_btn_recipesEdit"
 
         android:layout_width="55dp"
         android:layout_height="wrap_content"
@@ -238,13 +238,13 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_ingredients"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/activity_main_button_recipes" />
+        app:layout_constraintStart_toEndOf="@id/ac_main_btn_recipes" />
 
     <!--Diary Row-->
     <Button
-        android:id="@+id/activity_main_button_diary"
+        android:id="@+id/ac_main_btn_diary"
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -260,11 +260,11 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_recipes"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_recipes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_main_button_diary_edit" />
+        app:layout_constraintEnd_toStartOf="@id/ac_main_btn_diaryEdit" />
     <Button
-        android:id="@+id/activity_main_button_diary_edit"
+        android:id="@+id/ac_main_btn_diaryEdit"
 
         android:layout_width="55dp"
         android:layout_height="wrap_content"
@@ -278,8 +278,8 @@
 
         android:onClick="buttonEvents"
 
-        app:layout_constraintTop_toBottomOf="@id/activity_main_button_recipes"
-        app:layout_constraintStart_toEndOf="@id/activity_main_button_diary"
+        app:layout_constraintTop_toBottomOf="@id/ac_main_btn_recipes"
+        app:layout_constraintStart_toEndOf="@id/ac_main_btn_diary"
         app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
