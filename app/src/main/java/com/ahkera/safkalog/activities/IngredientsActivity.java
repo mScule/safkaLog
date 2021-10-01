@@ -36,8 +36,9 @@ public class IngredientsActivity extends AppCompatActivity {
     public void addIngredient(View view) {
         String name = inputName.getText().toString();
         int    kcal = Integer.parseInt(inputKcal.getText().toString());
-        Global.getInstance().ingredients.add(new Ingredient(name, kcal));
+        Global.getInstance().eatables.add(new Ingredient(name, kcal));
 
+        // New food added alert
         AlertDialog.Builder creationMsg = new AlertDialog.Builder(this);
         creationMsg.setMessage("New food \"" + name + "\" added with " + kcal + " kcal");
         creationMsg.setCancelable(true);

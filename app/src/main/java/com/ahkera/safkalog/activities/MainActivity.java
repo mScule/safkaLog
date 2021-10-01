@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView diaryLogsToday;
     private LinearLayout labelDiaryLogToday;
-    private TextView valueTodayTotalKcal;
+    private TextView     valueTodayTotalKcal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
             diaryLogsToday.setLayoutManager(layoutManager);
-            diaryLogsToday.setAdapter(new DiaryLogAdapter(Global.getInstance().diaryDateToday.getLogs(),this));
+            diaryLogsToday.setAdapter(
+                new DiaryLogAdapter(Global.getInstance().diaryDateToday.getLogs(),this)
+            );
         }
     }
 

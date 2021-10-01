@@ -14,7 +14,7 @@ public class Recipe extends Eatable {
     }
 
     @Override
-    int getKcal() {
+    public int getKcal() {
         int kcalTotal = 0;
 
         for(EatableUnit unit : ingredients)
@@ -24,7 +24,7 @@ public class Recipe extends Eatable {
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return name;
     }
 }

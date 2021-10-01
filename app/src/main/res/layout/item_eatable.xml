@@ -2,11 +2,10 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/it_eatable_tv_logType"
+        android:id="@+id/it_eatable_tv_eatableType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -17,7 +16,7 @@
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/it_eatable_tv_logName"
+        android:id="@+id/it_eatable_tv_eatableName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

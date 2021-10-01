@@ -20,12 +20,12 @@ public class Ingredient extends Eatable {
     }
 
     @Override
-    int getKcal() {
+    public int getKcal() {
         return kcal;
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return name;
     }
 

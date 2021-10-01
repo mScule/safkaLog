@@ -1,6 +1,6 @@
 package com.ahkera.safkalog.eatable;
 
-abstract class Eatable {
-    abstract int getKcal();
-    abstract String getName();
+public abstract class Eatable {
+    public abstract int getKcal();
+    public abstract String getName();
 }
