@@ -47,6 +47,7 @@
                 android:layout_marginTop="56dp"
                 android:hint="@string/sh_lb_gramHint"
 
+                android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ac_recipes_lb_grams"
                 app:layout_constraintTop_toBottomOf="@id/ac_addIngredients_lb" />
@@ -98,7 +99,8 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ac_recipes_ll_addIngredients"></androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@id/ac_recipes_ll_addIngredients">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <!--Finish button-->
             <Button
@@ -173,7 +175,8 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ac_recipes_ll_currentIngredients"></androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@id/ac_recipes_ll_currentIngredients">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <!--Naming new recipe-->
             <TextView
@@ -195,6 +198,7 @@
                 android:layout_margin="16dp"
                 android:hint="@string/sh_lb_recipeHint"
 
+                android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ac_recipes_lb_name"
                 app:layout_constraintTop_toBottomOf="@id/ac_currentIngredients_rv" />
