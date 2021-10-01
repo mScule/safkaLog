@@ -21,7 +21,7 @@
     <string name="ac_main_tv_todayTotalKcal">Today</string>
     <string name="ac_main_tv_totalKcalDummy">0.0</string>
 
-    <string name="ac_main_btn_eat">Eat</string>
+    <string name="ac_main_btn_eat">Consume</string>
     <string name="ac_main_btn_ingredients">Ingredients</string>
     <string name="ac_main_btn_recipes">Recipes</string>
     <string name="ac_main_btn_diary">Diary</string>

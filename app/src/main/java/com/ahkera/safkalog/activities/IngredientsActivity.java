@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.eatable.Ingredient;
 import com.ahkera.safkalog.global.Global;
+import com.ahkera.safkalog.util.Alert;
 
 
 /** @author Vilhelm
@@ -39,18 +40,10 @@ public class IngredientsActivity extends AppCompatActivity {
         Global.getInstance().eatables.add(new Ingredient(name, kcal));
 
         // New food added alert
-        AlertDialog.Builder creationMsg = new AlertDialog.Builder(this);
-        creationMsg.setMessage("New food \"" + name + "\" added with " + kcal + " kcal");
-        creationMsg.setCancelable(true);
-
-        creationMsg.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-
-        AlertDialog dialog = creationMsg.create();
-        dialog.show();
+        Alert.show(
+            this,
+            "New consumable \"" + name + "\" added with " + kcal + " kcal",
+            "Ok"
+        );
     }
 }

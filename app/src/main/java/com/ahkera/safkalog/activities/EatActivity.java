@@ -18,6 +18,7 @@ import com.ahkera.safkalog.diary.DiaryLog;
 import com.ahkera.safkalog.eatable.Eatable;
 import com.ahkera.safkalog.eatable.EatableUnit;
 import com.ahkera.safkalog.global.Global;
+import com.ahkera.safkalog.util.Alert;
 
 public class EatActivity extends AppCompatActivity implements EatableAdapter.OnEatableListener {
 
@@ -36,33 +37,34 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
     }
 
     private void eat(Eatable eatable, int grams) {
+
         Global.getInstance().diaryDateToday.addLog(
             new DiaryLog(new EatableUnit(eatable, grams))
         );
 
         // Eatable eaten alert
-        AlertDialog.Builder eatingMsg = new AlertDialog.Builder(this);
-        eatingMsg.setMessage("You ate " + grams + "grams of \"" + eatable.getName() + '\"');
-        eatingMsg.setCancelable(true);
-
-        eatingMsg.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-
-        AlertDialog dialog = eatingMsg.create();
-        dialog.show();
+        Alert.show(
+            this,
+            "You consumed " + grams + "grams of \"" + eatable.getName() + "\"",
+            "Ok"
+        );
     }
 
     @Override
     public void onEatableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_eat_et_grams);
 
-        Eatable eatable = Global.getInstance().eatables.get(position);
-        int     grams = Integer.parseInt(etGrams.getText().toString());
+        if(etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
+            Eatable eatable = Global.getInstance().eatables.get(position);
+            int     grams = Integer.parseInt(etGrams.getText().toString());
 
-        eat(eatable, grams);
+            eat(eatable, grams);
+        } else {
+            Alert.show(
+                this,
+                "You have to give the amount of the consumable in grams before you proceed to add one",
+                "Ok"
+            );
+        }
     }
 }

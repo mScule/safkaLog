@@ -71,7 +71,6 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
 
     public class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-
         private TextView eatableType, eatableName;
         private OnEatableListener onEatableListener;
 
