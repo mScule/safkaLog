@@ -18,4 +18,8 @@ public class EatableUnit extends Eatable {
     public int getKcal() {
         return grams * eatable.getKcal() / 100;
     }
+
+    public int getGrams() {
+        return grams;
+    }
 }

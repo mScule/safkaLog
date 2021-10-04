@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.DiaryLogAdapter;
-import com.ahkera.safkalog.global.Global;
+import com.ahkera.safkalog.global.GlobalInstance;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,21 +30,21 @@ public class MainActivity extends AppCompatActivity {
         valueTodayTotalKcal = findViewById(R.id.ac_main_tv_todayTotalKcalValue);
 
         valueTodayTotalKcal.setText(
-            Integer.toString(Global.getInstance().diaryDateToday.getKcalTotal())
+            Integer.toString(GlobalInstance.getInstance().diaryDateToday.getKcalTotal())
         );
 
         // Show or hide the today's diary log widgets
         labelDiaryLogToday = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
         diaryLogsToday     = findViewById(R.id.ac_main_rv_diaryLogsToday);
 
-        if(Global.getInstance().diaryDateToday.getLogs().isEmpty()) {
+        if(GlobalInstance.getInstance().diaryDateToday.getLogs().isEmpty()) {
             labelDiaryLogToday.setVisibility(INVISIBLE);
             diaryLogsToday.setVisibility(INVISIBLE);
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
             diaryLogsToday.setLayoutManager(layoutManager);
             diaryLogsToday.setAdapter(
-                new DiaryLogAdapter(Global.getInstance().diaryDateToday.getLogs(),this)
+                new DiaryLogAdapter(GlobalInstance.getInstance().diaryDateToday.getLogs(),this)
             );
         }
     }

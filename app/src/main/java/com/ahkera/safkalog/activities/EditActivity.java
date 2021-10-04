@@ -1,13 +1,20 @@
 package com.ahkera.safkalog.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.ahkera.safkalog.R;
+import com.ahkera.safkalog.adapters.RemovableAdapter;
+import com.ahkera.safkalog.global.GlobalInstance;
 
-public class EditActivity extends AppCompatActivity {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+public class EditActivity extends AppCompatActivity implements RemovableAdapter.OnRemovableListener {
 
     public static final int
         MODE_EAT         = 0,
@@ -18,6 +25,8 @@ public class EditActivity extends AppCompatActivity {
     public static final String EDIT_MODE =
         "com.ahkera.safkalog.activities.EditActivity.EDIT_ACTIVITY";
 
+    private RecyclerView editables;
+
     private int editMode;
 
     @Override
@@ -26,17 +35,52 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
         Bundle extras = getIntent().getExtras();
 
+        editables = findViewById(R.id.ac_edit_rv_editables);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        editables.setLayoutManager(layoutManager);
+
         editMode = extras.getInt(EDIT_MODE);
 
-        switch(editMode) {
+        updateRemovables(editMode);
+    }
+
+    private void updateRemovables(int mode) {
+
+        ArrayList<?> editablesList = new ArrayList();
+
+        switch(mode) {
             case MODE_EAT:
+                editablesList = GlobalInstance.getInstance().diaryDateToday.getLogs();
                 break;
             case MODE_INGREDIENTS:
-                break;
             case MODE_RECIPES:
+                editablesList = GlobalInstance.getInstance().eatables;
                 break;
             case MODE_DIARY:
                 break;
         }
+
+        editables.setAdapter(new RemovableAdapter(
+                editablesList,
+                this,
+                this::onRemovableClick
+        ));
+    }
+
+    @Override
+    public void onRemovableClick(int position) {
+        switch(editMode) {
+            case MODE_EAT:
+                GlobalInstance.getInstance().diaryDateToday.removeLog(position);
+                break;
+            case MODE_INGREDIENTS:
+            case MODE_RECIPES:
+                GlobalInstance.getInstance().eatables.remove(position);
+                break;
+            case MODE_DIARY:
+                break;
+        }
+        updateRemovables(editMode);
     }
 }

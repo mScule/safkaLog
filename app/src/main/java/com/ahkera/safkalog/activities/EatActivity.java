@@ -1,15 +1,10 @@
 package com.ahkera.safkalog.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.widget.AdapterView;
 import android.widget.EditText;
 
 import com.ahkera.safkalog.R;
@@ -17,7 +12,7 @@ import com.ahkera.safkalog.adapters.EatableAdapter;
 import com.ahkera.safkalog.diary.DiaryLog;
 import com.ahkera.safkalog.eatable.Eatable;
 import com.ahkera.safkalog.eatable.EatableUnit;
-import com.ahkera.safkalog.global.Global;
+import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.util.Alert;
 
 public class EatActivity extends AppCompatActivity implements EatableAdapter.OnEatableListener {
@@ -33,12 +28,12 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         eatables.setLayoutManager(layoutManager);
-        eatables.setAdapter(new EatableAdapter(Global.getInstance().eatables, this, this::onEatableClick));
+        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().eatables, this, this::onEatableClick));
     }
 
     private void eat(Eatable eatable, int grams) {
 
-        Global.getInstance().diaryDateToday.addLog(
+        GlobalInstance.getInstance().diaryDateToday.addLog(
             new DiaryLog(new EatableUnit(eatable, grams))
         );
 
@@ -55,7 +50,7 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
         EditText etGrams = findViewById(R.id.ac_eat_et_grams);
 
         if(etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
-            Eatable eatable = Global.getInstance().eatables.get(position);
+            Eatable eatable = GlobalInstance.getInstance().eatables.get(position);
             int     grams = Integer.parseInt(etGrams.getText().toString());
 
             eat(eatable, grams);
