@@ -25,6 +25,8 @@ import java.util.ArrayList;
 /**
  * Custom adapter for item removers. It's used by edit activity, and recipes activity
  *
+ * ArrayList can contain Eatable, EatableUnit, DiaryLog, and DiaryDate
+ *
  * @author Vilhelm
  */
 public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.ContactHolder> {
@@ -33,7 +35,11 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
     private ArrayList<?> removables;
     private Context context;
 
-    public RemovableAdapter(ArrayList<?> removables, Context context, OnRemovableListener onRemovableListener) {
+    public RemovableAdapter(
+        ArrayList<?> removables,
+        Context context,
+        OnRemovableListener onRemovableListener
+    ) {
         this.removables = removables;
         this.context    = context;
         this.mOnRemovableListener = onRemovableListener;
@@ -55,56 +61,72 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         // Checking the type of the removable
         if (removable instanceof Eatable) {
 
-            Eatable removableEatable = (Eatable) removable;
+            Eatable eatable = (Eatable) removable;
 
             inflater.inflate(R.layout.removable_eatable, holder.removable);
 
             TextView
-                removableType = holder.removable.findViewById(R.id.removable_eatable_tv_type),
-                removableName = holder.removable.findViewById(R.id.removable_eatable_tv_name),
-                removableKcal = holder.removable.findViewById(R.id.removable_eatable_tv_kcal);
+                type = holder.removable.findViewById(R.id.removable_eatable_tv_type),
+                name = holder.removable.findViewById(R.id.removable_eatable_tv_name),
+                kcal = holder.removable.findViewById(R.id.removable_eatable_tv_kcal);
 
             // Assigning type
-            if (removableEatable instanceof Ingredient) {
-                removableType.setText(
+            if (eatable instanceof Ingredient) {
+                type.setText(
                     context.getString(R.string.sh_em_food) + '/' +
                     context.getString(R.string.sh_em_drink)
                 );
-            } else if (removableEatable instanceof Recipe) {
-                removableType.setText(context.getString(R.string.sh_em_recipe));
+            } else if (eatable instanceof Recipe) {
+                type.setText(context.getString(R.string.sh_em_recipe));
             }
 
-            removableName.setText(removableEatable.getName());
-            removableKcal.setText(Integer.toString(removableEatable.getKcal()));
+            name.setText(eatable.getName());
+            kcal.setText(Integer.toString(eatable.getKcal()));
 
         } else if (removable instanceof EatableUnit) {
 
-            EatableUnit removableEatableUnit = (EatableUnit) removable;
-            Log.d("RemovableAdapter", "EatableUnit not yet supported");
+            EatableUnit eatableUnit = (EatableUnit) removable;
+
+            inflater.inflate(R.layout.removable_eatable_unit, holder.removable);
+
+            TextView
+                name  = holder.removable.findViewById(R.id.removable_eatableUnit_tv_name),
+                grams = holder.removable.findViewById(R.id.removable_eatableUnit_tv_grams);
+
+            name.setText(eatableUnit.getName());
+            grams.setText(eatableUnit.getGrams());
 
         } else if (removable instanceof DiaryLog) {
 
-            DiaryLog removableDiaryLog = (DiaryLog) removable;
-            EatableUnit removableEatableUnit = removableDiaryLog.getEatableUnit();
+            DiaryLog diaryLog = (DiaryLog) removable;
+            EatableUnit removableEatableUnit = diaryLog.getEatableUnit();
 
             inflater.inflate(R.layout.removable_diary_log, holder.removable);
 
             TextView
-                removableName  = holder.removable.findViewById(R.id.removable_diaryLog_tv_eatableName),
-                removableGrams = holder.removable.findViewById(R.id.removable_diaryLog_tv_eatableKcal),
-                removableTime  = holder.removable.findViewById(R.id.removable_diaryLog_tv_logTime);
+                name  = holder.removable.findViewById(R.id.removable_diaryLog_tv_eatableName),
+                grams = holder.removable.findViewById(R.id.removable_diaryLog_tv_eatableKcal),
+                time  = holder.removable.findViewById(R.id.removable_diaryLog_tv_logTime);
 
-            removableName.setText(removableEatableUnit.getName());
-            removableGrams.setText(Integer.toString(removableEatableUnit.getKcal()));
-            removableTime.setText(removableDiaryLog.getTime());
+            name.setText(removableEatableUnit.getName());
+            grams.setText(Integer.toString(removableEatableUnit.getKcal()));
+            time.setText(diaryLog.getTime());
 
         } else if (removable instanceof DiaryDate) {
 
-            DiaryDate removableDiaryDate = (DiaryDate) removable;
+            DiaryDate diaryDate = (DiaryDate) removable;
             Log.d("RemovableAdapter", "DiaryDate not yet supported");
 
-        } else {
+            inflater.inflate(R.layout.removable_diary_date, holder.removable);
 
+            TextView
+                date = holder.removable.findViewById(R.id.removable_diaryDate_tv_date),
+                kcal = holder.removable.findViewById(R.id.removable_diaryDate_tv_kcalTotal);
+
+            date.setText(diaryDate.getDate());
+            kcal.setText(Integer.toString(diaryDate.getKcalTotal()));
+
+        } else {
             Log.e("RemovableAdapter", "Unsupported Element in the given ArrayList");
         }
     }

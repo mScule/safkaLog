@@ -37,8 +37,8 @@ public class DiaryDate {
         return logs;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return "DEMODATE: 10.10.2021";
     }
 
     public int getKcalTotal() {

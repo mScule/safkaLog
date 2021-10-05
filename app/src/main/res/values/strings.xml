@@ -13,6 +13,7 @@
     <string name="sh_lb_time">Time</string>
     <string name="sh_lb_grams">Grams</string>
     <string name="sh_lb_type">Type</string>
+    <string name="sh_lb_date">Date</string>
     <string name="sh_lb_kcalPer100Grams">Kcal/100g</string>
 
     <string name="sh_btn_add">Add</string>
