@@ -7,9 +7,14 @@ import com.ahkera.safkalog.util.StringFormat;
 
 import java.util.Calendar;
 
+/**
+ * Contains the information of single consumed eatableUnit and the time of consumption.
+ * @author Vilhelm
+ */
 public class DiaryLog {
-    private EatableUnit eatableUnit;
-    private String time;
+
+    private final EatableUnit eatableUnit;
+    private final String time;
 
     public DiaryLog(EatableUnit eatableUnit){
         this.eatableUnit = eatableUnit;
@@ -21,13 +26,11 @@ public class DiaryLog {
         this.time = StringFormat.time(hours, minutes);
     }
 
-    public EatableUnit getEatableUnit() {
-        return eatableUnit;
-    }
+    /** @return The eatableUnit that was consumed. */
+    public EatableUnit getEatableUnit() { return eatableUnit; }
 
-    public String getTime() {
-        return time;
-    }
+    /** @return The time of consumption */
+    public String getTime() { return time; }
 
     @NonNull
     @Override
