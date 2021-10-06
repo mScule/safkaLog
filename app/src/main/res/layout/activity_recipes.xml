@@ -107,13 +107,13 @@
                 android:id="@+id/ac_addRecipesAndGoMain_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:onClick="onFinishClick"
+
                 android:text="@string/sh_btn_finishRecipe"
                 android:textAllCaps="false"
-
-                app:layout_constraintTop_toBottomOf="@id/ac_recipes_et_inputName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ac_recipes_et_inputName" />
 
             <!--Current ingredients-->
             <TextView
