@@ -72,7 +72,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sh_lb_name"
+                    android:text="@string/sh_lb_type"
                     android:textStyle="bold" />
 
                 <Space
@@ -84,14 +84,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="64dp"
-                    android:text="@string/sh_lb_kcal"
+                    android:text="@string/sh_lb_name"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ac_ingredientsCatalog_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:maxHeight="170dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
@@ -167,7 +167,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ac_currentIngredients_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:maxHeight="170dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
