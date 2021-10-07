@@ -17,8 +17,6 @@ import com.ahkera.safkalog.adapters.DiaryLogAdapter;
 import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.global.GlobalInstance;
 
-import java.util.Calendar;
-
 /**
  * The home screen of the SafkaLog application. The currentDate it changed through this activity.
  * @author Vilhelm
