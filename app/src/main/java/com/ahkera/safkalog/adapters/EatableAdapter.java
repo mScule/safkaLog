@@ -10,20 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ahkera.safkalog.R;
-import com.ahkera.safkalog.eatable.Eatable;
-import com.ahkera.safkalog.eatable.Ingredient;
-import com.ahkera.safkalog.eatable.Recipe;
+import com.ahkera.safkalog.consumable.Consumable;
+import com.ahkera.safkalog.consumable.Ingredient;
+import com.ahkera.safkalog.consumable.Recipe;
 
 import java.util.ArrayList;
 
+/**
+ * Custom RecycleView Adapter for Consumable objects.
+ * @author Vilhelm
+ */
 public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactHolder> {
 
     private OnEatableListener mOnEatableListener;
-    private ArrayList<Eatable> eatables;
+    private ArrayList<Consumable> consumables;
     private Context context;
 
-    public EatableAdapter(ArrayList<Eatable> eatables, Context context, OnEatableListener mOnEatableListener) {
-        this.eatables = eatables;
+    public EatableAdapter(ArrayList<Consumable> consumables, Context context, OnEatableListener mOnEatableListener) {
+        this.consumables = consumables;
         this.context  = context;
         this.mOnEatableListener = mOnEatableListener;
     }
@@ -38,7 +42,7 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
 
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
-        final Eatable eatable = eatables.get(position);
+        final Consumable consumable = consumables.get(position);
 
         // The emojis, that are being shown under the type label
         // Ingredient: Donut '/' Coffee
@@ -53,20 +57,20 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
 
         String type = "";
 
-        // Check the eatable type
-        if (eatable instanceof Ingredient)
+        // Check the consumable type
+        if (consumable instanceof Ingredient)
             type = typeIngredient;
 
-        else if (eatable instanceof Recipe)
+        else if (consumable instanceof Recipe)
             type = typeRecipe;
 
         holder.setEatableType(type);
-        holder.setEatableName(eatable.getName());
+        holder.setEatableName(consumable.getName());
     }
 
     @Override
     public int getItemCount() {
-        return eatables == null ? 0 : eatables.size();
+        return consumables == null ? 0 : consumables.size();
     }
 
     public class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -87,7 +91,6 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
         public void setEatableType(String eatableType) {
             this.eatableType.setText(eatableType);
         }
-
         public void setEatableName(String eatableName) {
             this.eatableName.setText(eatableName);
         }

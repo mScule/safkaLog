@@ -15,8 +15,7 @@ import com.ahkera.safkalog.diary.DiaryLog;
 import java.util.ArrayList;
 
 /**
- * Custom adapter for the diary logs. It's used by the main activity, and the diary activity.
- *
+ * Custom RecycleView Adapter for the DiaryLog objects.
  * @author Vilhelm
  */
 public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.ContactHolder> {
@@ -65,7 +64,6 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
         public void setEatableName(String eatableName) {
             this.eatableName.setText(eatableName);
         }
-
         public void setEatableKcal(String eatableKcal) {
             this.eatableKcal.setText(eatableKcal);
         }

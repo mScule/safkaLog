@@ -1,4 +1,4 @@
-package com.ahkera.safkalog.eatable;
+package com.ahkera.safkalog.consumable;
 
 import androidx.annotation.NonNull;
 
@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
  * Contains the information of single consumable. The name, and kilocalories per 100 grams.
  * @author Vilhelm
  */
-public class Ingredient extends Eatable {
+public class Ingredient extends Consumable {
 
     private String name;
     private int kcal;

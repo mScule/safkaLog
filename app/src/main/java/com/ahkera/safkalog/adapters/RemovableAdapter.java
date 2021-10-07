@@ -13,20 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ahkera.safkalog.R;
+import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.diary.DiaryLog;
-import com.ahkera.safkalog.eatable.Eatable;
-import com.ahkera.safkalog.eatable.EatableUnit;
-import com.ahkera.safkalog.eatable.Ingredient;
-import com.ahkera.safkalog.eatable.Recipe;
+import com.ahkera.safkalog.consumable.Consumable;
+import com.ahkera.safkalog.consumable.Ingredient;
+import com.ahkera.safkalog.consumable.Recipe;
 
 import java.util.ArrayList;
 
 /**
- * Custom adapter for item removers. It's used by edit activity, and recipes activity
- *
- * ArrayList can contain Eatable, EatableUnit, DiaryLog, and DiaryDate
- *
+ * Custom RecycleView Adapter for item removers.
+ * Adapter supports Consumable, ConsumableUnit, DiaryLog, and DiaryDate objects.
  * @author Vilhelm
  */
 public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.ContactHolder> {
@@ -59,9 +57,9 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Checking the type of the removable
-        if (removable instanceof Eatable) {
+        if (removable instanceof Consumable) {
 
-            Eatable eatable = (Eatable) removable;
+            Consumable consumable = (Consumable) removable;
 
             inflater.inflate(R.layout.removable_eatable, holder.removable);
 
@@ -71,21 +69,21 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
                 kcal = holder.removable.findViewById(R.id.removable_eatable_tv_kcal);
 
             // Assigning type
-            if (eatable instanceof Ingredient) {
+            if (consumable instanceof Ingredient) {
                 type.setText(
                     context.getString(R.string.sh_em_food) + '/' +
                     context.getString(R.string.sh_em_drink)
                 );
-            } else if (eatable instanceof Recipe) {
+            } else if (consumable instanceof Recipe) {
                 type.setText(context.getString(R.string.sh_em_recipe));
             }
 
-            name.setText(eatable.getName());
-            kcal.setText(Integer.toString(eatable.getKcal()));
+            name.setText(consumable.getName());
+            kcal.setText(Integer.toString(consumable.getKcal()));
 
-        } else if (removable instanceof EatableUnit) {
+        } else if (removable instanceof ConsumableUnit) {
 
-            EatableUnit eatableUnit = (EatableUnit) removable;
+            ConsumableUnit eatableUnit = (ConsumableUnit) removable;
 
             inflater.inflate(R.layout.removable_eatable_unit, holder.removable);
 
@@ -99,7 +97,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         } else if (removable instanceof DiaryLog) {
 
             DiaryLog diaryLog = (DiaryLog) removable;
-            EatableUnit removableEatableUnit = diaryLog.getEatableUnit();
+            ConsumableUnit removableEatableUnit = diaryLog.getEatableUnit();
 
             inflater.inflate(R.layout.removable_diary_log, holder.removable);
 

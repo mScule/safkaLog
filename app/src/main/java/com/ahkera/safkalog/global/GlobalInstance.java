@@ -1,14 +1,15 @@
 package com.ahkera.safkalog.global;
 
+import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.diary.DiaryDate;
-import com.ahkera.safkalog.eatable.Eatable;
-import com.ahkera.safkalog.eatable.EatableUnit;
+import com.ahkera.safkalog.consumable.Consumable;
 
 import java.util.ArrayList;
 
 /**
  * Contains all the information that is accessed, modified, and created while the program is on.
  * @author Vilhelm
+ * @author Konsta
  */
 public class GlobalInstance {
 
@@ -19,10 +20,10 @@ public class GlobalInstance {
     public DiaryDate diaryDateToday;
 
     /** Holds the consumables (Eatables, Recipes) that the user has created. */
-    public ArrayList<Eatable> eatables;
+    public ArrayList<Consumable> consumables;
 
     /** Holds the information of the recipe that is currently being made in the recipe activity. */
-    public ArrayList<EatableUnit> currentRecipe;
+    public ArrayList<ConsumableUnit> currentRecipe;
 
     private static GlobalInstance global = new GlobalInstance();
 
@@ -32,7 +33,8 @@ public class GlobalInstance {
 
     private GlobalInstance() {
         diaryDateToday = new DiaryDate();
-        eatables       = new ArrayList();
+        consumables    = new ArrayList();
         currentRecipe  = new ArrayList();
+        dates          = new ArrayList();
     }
 }

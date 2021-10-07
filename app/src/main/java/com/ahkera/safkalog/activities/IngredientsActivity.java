@@ -7,16 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.ahkera.safkalog.R;
-import com.ahkera.safkalog.eatable.Ingredient;
+import com.ahkera.safkalog.consumable.Ingredient;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.util.Alert;
 
-
-/** @author Vilhelm
- *
- * This activity is finished.
- *
- * It works by asking the user to give the name and kcals per 100g from to user.
+/**
+ * Asks the user to give the name and kilocalories per 100g from to user.
+ * @author Vilhelm
 */
 
 public class IngredientsActivity extends AppCompatActivity {
@@ -35,7 +32,7 @@ public class IngredientsActivity extends AppCompatActivity {
     public void addIngredient(View view) {
         String name = inputName.getText().toString();
         int    kcal = Integer.parseInt(inputKcal.getText().toString());
-        GlobalInstance.getInstance().eatables.add(new Ingredient(name, kcal));
+        GlobalInstance.getInstance().consumables.add(new Ingredient(name, kcal));
 
         // New food added alert
         Alert.show(

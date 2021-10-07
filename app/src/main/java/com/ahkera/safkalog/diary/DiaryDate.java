@@ -55,8 +55,24 @@ public class DiaryDate {
         return StringFormat.date(date.getDay(), date.getMonth(), date.getYear());
     }
 
-    /** @return The day of the month as an integer value */
-    public int getDay() { return date.getDay(); }
+    /** @return True if date is current date, false otherwise */
+    public boolean isToday() {
+        Calendar calendar = Calendar.getInstance();
+
+        TimeStamp calendarDate = new TimeStamp(
+            calendar.get(Calendar.DAY_OF_MONTH),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.YEAR)
+        );
+
+        if(
+            date.getDay()   == calendarDate.getDay()   &&
+            date.getMonth() == calendarDate.getMonth() &&
+            date.getYear()  == calendarDate.getYear())
+            return true;
+        else
+            return false;
+    }
 
     /** @return The total amount of kilocalories gained in the date */
     public int getKcalTotal() { return kcalSum; }

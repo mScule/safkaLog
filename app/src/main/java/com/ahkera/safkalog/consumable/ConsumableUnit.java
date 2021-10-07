@@ -1,29 +1,29 @@
-package com.ahkera.safkalog.eatable;
+package com.ahkera.safkalog.consumable;
 
 /**
  * Contains the consumable item and the amount of it consumed in grams.
  * @author Vilhelm
  */
-public class EatableUnit extends Eatable {
+public class ConsumableUnit extends Consumable {
 
-    private Eatable eatable;
+    private Consumable consumable;
     private int grams;
 
-    public EatableUnit(Eatable eatable, int grams) {
-        this.eatable = eatable;
+    public ConsumableUnit(Consumable consumable, int grams) {
+        this.consumable = consumable;
         this.grams = grams;
     }
 
     /** @return The name of the consumed unit. */
     @Override
     public String getName() {
-        return eatable.getName();
+        return consumable.getName();
     }
 
     /** @return The kilocalories of the consumed unit. */
     @Override
     public int getKcal() {
-        return grams * eatable.getKcal() / 100;
+        return grams * consumable.getKcal() / 100;
     }
 
     /** @return The amount of grams that the unit was consumed. */

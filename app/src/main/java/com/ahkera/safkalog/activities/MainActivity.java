@@ -14,8 +14,16 @@ import android.widget.TextView;
 
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.DiaryLogAdapter;
+import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.global.GlobalInstance;
 
+import java.util.Calendar;
+
+/**
+ * The home screen of the SafkaLog application. The currentDate it changed through this activity.
+ * @author Vilhelm
+ * @author Konsta
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView diaryLogsToday;
@@ -28,14 +36,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         valueTodayTotalKcal = findViewById(R.id.ac_main_tv_todayTotalKcalValue);
+        labelDiaryLogToday = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
+        diaryLogsToday     = findViewById(R.id.ac_main_rv_diaryLogsToday);
 
+        checkDay();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateTodayLog();
+    }
+
+    private void updateTodayLog() {
+
+        checkDay();
+
+        // Show or hide the today's diary log widgets
         valueTodayTotalKcal.setText(
             Integer.toString(GlobalInstance.getInstance().diaryDateToday.getKcalTotal())
         );
-
-        // Show or hide the today's diary log widgets
-        labelDiaryLogToday = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
-        diaryLogsToday     = findViewById(R.id.ac_main_rv_diaryLogsToday);
 
         if(GlobalInstance.getInstance().diaryDateToday.getLogs().isEmpty()) {
             labelDiaryLogToday.setVisibility(INVISIBLE);
@@ -44,8 +64,24 @@ public class MainActivity extends AppCompatActivity {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
             diaryLogsToday.setLayoutManager(layoutManager);
             diaryLogsToday.setAdapter(
-                new DiaryLogAdapter(GlobalInstance.getInstance().diaryDateToday.getLogs(),this)
+                    new DiaryLogAdapter(GlobalInstance.getInstance().diaryDateToday.getLogs(),this)
             );
+        }
+    }
+
+    private void checkDay() {
+
+        // Checking the date. If changed. Set new day.
+        if(!GlobalInstance.getInstance().diaryDateToday.isToday()) {
+
+            // Adding the date to diary only, if there's logs made.
+            if(!GlobalInstance.getInstance().diaryDateToday.getLogs().isEmpty())
+
+                // Add new date to dates
+                GlobalInstance.getInstance().dates.add(GlobalInstance.getInstance().diaryDateToday);
+
+            // Create new current day
+            GlobalInstance.getInstance().diaryDateToday = new DiaryDate();
         }
     }
 

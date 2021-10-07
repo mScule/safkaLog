@@ -2,7 +2,7 @@ package com.ahkera.safkalog.diary;
 
 import androidx.annotation.NonNull;
 
-import com.ahkera.safkalog.eatable.EatableUnit;
+import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.util.StringFormat;
 
 import java.util.Calendar;
@@ -13,10 +13,10 @@ import java.util.Calendar;
  */
 public class DiaryLog {
 
-    private final EatableUnit eatableUnit;
+    private final ConsumableUnit eatableUnit;
     private final String time;
 
-    public DiaryLog(EatableUnit eatableUnit){
+    public DiaryLog(ConsumableUnit eatableUnit){
         this.eatableUnit = eatableUnit;
 
         int hours, minutes;
@@ -27,7 +27,7 @@ public class DiaryLog {
     }
 
     /** @return The eatableUnit that was consumed. */
-    public EatableUnit getEatableUnit() { return eatableUnit; }
+    public ConsumableUnit getEatableUnit() { return eatableUnit; }
 
     /** @return The time of consumption */
     public String getTime() { return time; }

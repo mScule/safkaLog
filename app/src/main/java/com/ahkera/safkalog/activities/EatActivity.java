@@ -9,12 +9,16 @@ import android.widget.EditText;
 
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.EatableAdapter;
+import com.ahkera.safkalog.consumable.Consumable;
 import com.ahkera.safkalog.diary.DiaryLog;
-import com.ahkera.safkalog.eatable.Eatable;
-import com.ahkera.safkalog.eatable.EatableUnit;
+import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.util.Alert;
 
+/**
+ * Asks user the grams of the consumable and creates DiaryLog and adds it to the currentDiaryDate.
+ * @author Vilhelm
+ */
 public class EatActivity extends AppCompatActivity implements EatableAdapter.OnEatableListener {
 
     private RecyclerView eatables;
@@ -28,19 +32,19 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         eatables.setLayoutManager(layoutManager);
-        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().eatables, this, this::onEatableClick));
+        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().consumables, this, this::onEatableClick));
     }
 
-    private void eat(Eatable eatable, int grams) {
+    private void eat(Consumable consumable, int grams) {
 
         GlobalInstance.getInstance().diaryDateToday.addLog(
-            new DiaryLog(new EatableUnit(eatable, grams))
+            new DiaryLog(new ConsumableUnit(consumable, grams))
         );
 
-        // Eatable eaten alert
+        // Consumable eaten alert
         Alert.show(
             this,
-            "You consumed " + grams + "grams of \"" + eatable.getName() + "\"",
+            "You consumed " + grams + "grams of \"" + consumable.getName() + "\"",
             "Ok"
         );
     }
@@ -50,10 +54,10 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
         EditText etGrams = findViewById(R.id.ac_eat_et_grams);
 
         if(etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
-            Eatable eatable = GlobalInstance.getInstance().eatables.get(position);
+            Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int     grams = Integer.parseInt(etGrams.getText().toString());
 
-            eat(eatable, grams);
+            eat(consumable, grams);
         } else {
             Alert.show(
                 this,

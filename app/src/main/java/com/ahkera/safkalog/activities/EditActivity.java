@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.RemovableAdapter;
 import com.ahkera.safkalog.global.GlobalInstance;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * User can edit (delete) information from different ArrayLists by accessing edit activity with
+ * different modes. These modes determines which ArrayList will be modified.
+ * @author Vilhelm
+ */
 public class EditActivity extends AppCompatActivity implements RemovableAdapter.OnRemovableListener {
 
     public static final int
@@ -55,7 +58,7 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
                 break;
             case MODE_INGREDIENTS:
             case MODE_RECIPES:
-                editablesList = GlobalInstance.getInstance().eatables;
+                editablesList = GlobalInstance.getInstance().consumables;
                 break;
             case MODE_DIARY:
                 break;
@@ -76,7 +79,7 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
                 break;
             case MODE_INGREDIENTS:
             case MODE_RECIPES:
-                GlobalInstance.getInstance().eatables.remove(position);
+                GlobalInstance.getInstance().consumables.remove(position);
                 break;
             case MODE_DIARY:
                 break;

@@ -4,23 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.style.UpdateAppearance;
-import android.text.style.UpdateLayout;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.ahkera.safkalog.R;
-import com.ahkera.safkalog.adapters.DiaryLogAdapter;
 import com.ahkera.safkalog.adapters.EatableAdapter;
 import com.ahkera.safkalog.adapters.RemovableAdapter;
-import com.ahkera.safkalog.diary.DiaryLog;
-import com.ahkera.safkalog.eatable.Eatable;
-import com.ahkera.safkalog.eatable.EatableUnit;
-import com.ahkera.safkalog.eatable.Ingredient;
-import com.ahkera.safkalog.eatable.Recipe;
+import com.ahkera.safkalog.consumable.Consumable;
+import com.ahkera.safkalog.consumable.ConsumableUnit;
+import com.ahkera.safkalog.consumable.Recipe;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.util.Alert;
 
@@ -50,7 +43,7 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
 
         LinearLayoutManager layoutManagerUpper = new LinearLayoutManager(this);
         eatables.setLayoutManager(layoutManagerUpper);
-        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().eatables, this, this::onEatableClick));
+        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().consumables, this, this::onEatableClick));
 
         //Lower RecyclerView
         currentRecipe = findViewById(R.id.ac_currentIngredients_rv);
@@ -60,13 +53,13 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
         currentRecipe.setAdapter(new RemovableAdapter(GlobalInstance.getInstance().currentRecipe, this, this::onRemovableClick));
     }
 
-    private void add(Eatable eatable, int grams) {
+    private void add(Consumable consumable, int grams) {
 
-        GlobalInstance.getInstance().currentRecipe.add(new EatableUnit(eatable, grams));
+        GlobalInstance.getInstance().currentRecipe.add(new ConsumableUnit(consumable, grams));
         // Adding ingredients alert
         Alert.show(
                 this,
-                grams + " grams of \"" + eatable.getName() + "\"" + " added to current ingredients.",
+                grams + " grams of \"" + consumable.getName() + "\"" + " added to current ingredients.",
                 "Ok"
         );
     }
@@ -76,10 +69,10 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
         EditText etGrams = findViewById(R.id.ac_recipes_et_inputGrams);
 
         if (etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
-            Eatable eatable = GlobalInstance.getInstance().eatables.get(position);
+            Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int grams = Integer.parseInt(etGrams.getText().toString());
 
-            add(eatable, grams);
+            add(consumable, grams);
             updateRecycleViews();
 
         } else {
@@ -102,7 +95,7 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
 
         if (recipeName.getText().toString() != null && !recipeName.getText().toString().equals("")) {
             String name = recipeName.getText().toString();
-            GlobalInstance.getInstance().eatables.add(new Recipe(name, GlobalInstance.getInstance().currentRecipe));
+            GlobalInstance.getInstance().consumables.add(new Recipe(name, GlobalInstance.getInstance().currentRecipe));
             updateRecycleViews();
 
         } else {
