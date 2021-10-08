@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.RemovableAdapter;
@@ -28,6 +30,7 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
     public static final String EDIT_MODE =
         "com.ahkera.safkalog.activities.EditActivity.EDIT_ACTIVITY";
 
+    private TextView nothingToShowMsg;
     private RecyclerView editables;
 
     private int editMode;
@@ -39,6 +42,7 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
         Bundle extras = getIntent().getExtras();
 
         editables = findViewById(R.id.ac_edit_rv_editables);
+        nothingToShowMsg = findViewById(R.id.ac_edit_tv_nothingToShow);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         editables.setLayoutManager(layoutManager);
@@ -61,14 +65,22 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
                 editablesList = GlobalInstance.getInstance().consumables;
                 break;
             case MODE_DIARY:
+                editablesList = GlobalInstance.getInstance().dates;
                 break;
         }
 
-        editables.setAdapter(new RemovableAdapter(
-                editablesList,
-                this,
-                this::onRemovableClick
-        ));
+        if(!editablesList.isEmpty()) {
+
+            nothingToShowMsg.setVisibility(View.INVISIBLE);
+            editables.setAdapter(new RemovableAdapter(
+                    editablesList,
+                    this,
+                    this::onRemovableClick
+            ));
+        } else {
+            editables.setVisibility(View.INVISIBLE);
+            nothingToShowMsg.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -82,6 +94,7 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
                 GlobalInstance.getInstance().consumables.remove(position);
                 break;
             case MODE_DIARY:
+                GlobalInstance.getInstance().dates.remove(position);
                 break;
         }
         updateRemovables(editMode);

@@ -28,11 +28,18 @@
     <string name="ac_main_btn_diary">Diary</string>
     <string name="ac_main_btn_edit">Edit</string>
 
+    <!--EatActivity-->
+    <string name="ac_eat_nothingToConsume">Theres nothing to consume</string>
+
     <!--RecipesActivity-->
     <string name="sh_lb_recipeHint">Name of the new recipe</string>
     <string name="sh_lb_gramHint">How many grams</string>
     <string name="sh_lb_addIngredients">Add ingredients</string>
     <string name="sh_lb_currentIngredients">Current ingredients</string>
     <string name="sh_btn_finishRecipe">Finish recipe</string>
+    <string name="ac_recipes_nothingToAdd">Theres nothing to add</string>
+
+    <!--EditActivity-->
+    <string name="ac_edit_lb_nothingToShow">Theres nothing to edit</string>
 
 </resources>

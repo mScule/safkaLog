@@ -14,15 +14,14 @@
         android:textSize="24sp">
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/it_removable_btn_removeButton"
 
-        android:textAllCaps="false"
-        android:text="@string/sh_em_delete"
+        android:src="@drawable/ic_remove_fire"
 
-        android:backgroundTint="@color/safkaLog_red"
+        android:backgroundTint="@color/transparent"
 
         android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="0"/>
 </LinearLayout>

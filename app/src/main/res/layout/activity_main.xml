@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="16dp"
+
+        android:src="@drawable/ic_settings_gear"
+        android:background="@color/transparent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -128,7 +140,7 @@
         android:id="@+id/ac_main_btn_eat"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -144,18 +156,16 @@
         app:layout_constraintTop_toBottomOf="@id/ac_main_rv_diaryLogsToday"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ac_main_btn_eatEdit" />
-    <Button
+    <ImageButton
         android:id="@+id/ac_main_btn_eatEdit"
 
         android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_margin="16dp"
 
-        android:backgroundTint="@color/safkaLog_red"
+        android:backgroundTint="@color/transparent"
 
-        android:text="@string/sh_em_edit"
-        android:textAllCaps="false"
-        android:textSize="20sp"
+        android:src="@drawable/ic_edit_pen"
 
         android:onClick="buttonEvents"
 
@@ -168,7 +178,7 @@
         android:id="@+id/ac_main_btn_ingredients"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -184,18 +194,16 @@
         app:layout_constraintTop_toBottomOf="@id/ac_main_btn_eat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ac_main_btn_ingredientsEdit" />
-    <Button
+    <ImageButton
         android:id="@+id/ac_main_btn_ingredientsEdit"
 
         android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_margin="16dp"
 
-        android:backgroundTint="@color/safkaLog_red"
+        android:backgroundTint="@color/transparent"
 
-        android:text="@string/sh_em_edit"
-        android:textAllCaps="false"
-        android:textSize="20sp"
+        android:src="@drawable/ic_edit_pen"
 
         android:onClick="buttonEvents"
 
@@ -208,7 +216,7 @@
         android:id="@+id/ac_main_btn_recipes"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -224,18 +232,16 @@
         app:layout_constraintTop_toBottomOf="@id/ac_main_btn_ingredients"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ac_main_btn_recipesEdit" />
-    <Button
+    <ImageButton
         android:id="@+id/ac_main_btn_recipesEdit"
 
         android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_margin="16dp"
 
-        android:backgroundTint="@color/safkaLog_red"
+        android:backgroundTint="@color/transparent"
 
-        android:text="@string/sh_em_edit"
-        android:textAllCaps="false"
-        android:textSize="20sp"
+        android:src="@drawable/ic_edit_pen"
 
         android:onClick="buttonEvents"
 
@@ -248,7 +254,7 @@
         android:id="@+id/ac_main_btn_diary"
 
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -264,18 +270,16 @@
         app:layout_constraintTop_toBottomOf="@id/ac_main_btn_recipes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ac_main_btn_diaryEdit" />
-    <Button
+    <ImageButton
         android:id="@+id/ac_main_btn_diaryEdit"
 
         android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_margin="16dp"
 
-        android:backgroundTint="@color/safkaLog_red"
+        android:backgroundTint="@color/transparent"
 
-        android:text="@string/sh_em_edit"
-        android:textAllCaps="false"
-        android:textSize="20sp"
+        android:src="@drawable/ic_edit_pen"
 
         android:onClick="buttonEvents"
 

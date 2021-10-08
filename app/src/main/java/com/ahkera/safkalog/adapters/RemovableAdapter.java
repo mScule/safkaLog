@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -113,7 +114,6 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         } else if (removable instanceof DiaryDate) {
 
             DiaryDate diaryDate = (DiaryDate) removable;
-            Log.d("RemovableAdapter", "DiaryDate not yet supported");
 
             inflater.inflate(R.layout.removable_diary_date, holder.removable);
 
@@ -134,7 +134,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
 
     public class ContactHolder extends RecyclerView.ViewHolder {
         public LinearLayout removable;
-        private Button   removeButton;
+        private ImageButton removeButton;
 
         public ContactHolder(@NonNull View itemView, OnRemovableListener onRemovableListener) {
             super(itemView);
