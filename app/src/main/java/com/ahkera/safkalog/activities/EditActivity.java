@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.RemovableAdapter;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,12 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
         editMode = extras.getInt(EDIT_MODE);
 
         updateRemovables(editMode);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SaveStateManager.saveState(this);
     }
 
     private void updateRemovables(int mode) {

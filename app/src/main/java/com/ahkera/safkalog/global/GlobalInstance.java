@@ -1,6 +1,7 @@
 package com.ahkera.safkalog.global;
 
 import com.ahkera.safkalog.consumable.ConsumableUnit;
+import com.ahkera.safkalog.consumable.ConsumptionLimit;
 import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.consumable.Consumable;
 
@@ -25,16 +26,37 @@ public class GlobalInstance {
     /** Holds the information of the recipe that is currently being made in the recipe activity. */
     public ArrayList<ConsumableUnit> currentRecipe;
 
+    /** Holds the consumptionLimit, set by the user. */
+    public ConsumptionLimit consumptionLimit;
+
     private static GlobalInstance global = new GlobalInstance();
 
     public static GlobalInstance getInstance() {
         return global;
     }
 
+    public static void setInstance(GlobalInstance globalInstance) {
+        if(globalInstance.diaryDateToday != null)
+            getInstance().diaryDateToday = globalInstance.diaryDateToday;
+
+        if(globalInstance.consumables != null)
+            getInstance().consumables = globalInstance.consumables;
+
+        if(globalInstance.currentRecipe != null)
+            getInstance().currentRecipe = globalInstance.currentRecipe;
+
+        if(globalInstance.currentRecipe != null)
+            getInstance().dates = globalInstance.dates;
+
+        if(globalInstance.consumptionLimit != null)
+            getInstance().consumptionLimit = globalInstance.consumptionLimit;
+    }
+
     private GlobalInstance() {
-        diaryDateToday = new DiaryDate();
-        consumables    = new ArrayList();
-        currentRecipe  = new ArrayList();
-        dates          = new ArrayList();
+        diaryDateToday   = new DiaryDate();
+        consumables      = new ArrayList();
+        currentRecipe    = new ArrayList();
+        dates            = new ArrayList();
+        consumptionLimit = new ConsumptionLimit(0,false);
     }
 }

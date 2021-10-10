@@ -3,6 +3,7 @@
     <color name="safkaLog_blue">#6d9eeb</color>
     <color name="safkaLog_red">#ea9999</color>
     <color name="safkaLog_yellow">#ffe599</color>
+    <color name="safkaLog_gray">#dcdcdc</color>
     <color name="safkaLog_dark">#264653</color>
 
     <color name="purple_200">#FFBB86FC</color>

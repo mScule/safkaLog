@@ -11,6 +11,7 @@ import com.ahkera.safkalog.adapters.DiaryLogAdapter;
 import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.diary.DiaryLog;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 
 import java.util.ArrayList;
 

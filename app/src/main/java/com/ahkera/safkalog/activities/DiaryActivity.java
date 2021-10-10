@@ -11,6 +11,7 @@ import android.util.Log;
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.DiaryDateAdapter;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 
 /**
  * Access menu that the user uses for accessing the DiaryDates from the diary, for inspection.

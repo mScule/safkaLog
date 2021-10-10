@@ -17,7 +17,7 @@
     <ImageButton
         android:id="@+id/it_removable_btn_removeButton"
 
-        android:src="@drawable/ic_remove_fire"
+        android:src="@drawable/ic_remove"
 
         android:backgroundTint="@color/transparent"
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.adapters.DiaryLogAdapter;
 import com.ahkera.safkalog.diary.DiaryDate;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
+import com.ahkera.safkalog.util.Alert;
 
 /**
  * The home screen of the SafkaLog application. The currentDate it changed through this activity.
@@ -30,14 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(!SaveStateManager.stateExists(this))
+            Alert.show(this, getString(R.string.app_welcomeMsg), "Nice. Let's go");
+        else
+            SaveStateManager.loadState(this);
+
         valueTodayTotalKcal = findViewById(R.id.ac_main_tv_todayTotalKcalValue);
-        labelDiaryLogToday = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
-        diaryLogsToday     = findViewById(R.id.ac_main_rv_diaryLogsToday);
+        labelDiaryLogToday  = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
+        diaryLogsToday      = findViewById(R.id.ac_main_rv_diaryLogsToday);
 
         checkDay();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        SaveStateManager.saveState(this);
     }
 
     @Override
@@ -85,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonEvents(View view) {
         switch(view.getId()) {
+            case R.id.ac_main_btn_consumptionLimit:
+                Intent intentConsumptionLimit = new Intent(this, ConsumptionLimitActivity.class);
+                startActivity(intentConsumptionLimit);
+                break;
+
             case R.id.ac_main_btn_eat:
                 Intent intentEat = new Intent(this, EatActivity.class);
                 startActivity(intentEat);
@@ -111,16 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentEditEat);
                 break;
 
-            case R.id.ac_main_btn_ingredientsEdit:
+            case R.id.ac_main_btn_consumablesEdit:
                 Intent intentEditIngredients = new Intent(this, EditActivity.class);
                 intentEditIngredients.putExtra(EditActivity.EDIT_MODE, EditActivity.MODE_INGREDIENTS);
                 startActivity(intentEditIngredients);
-                break;
-
-            case R.id.ac_main_btn_recipesEdit:
-                Intent intentEditRecipes = new Intent(this, EditActivity.class);
-                intentEditRecipes.putExtra(EditActivity.EDIT_MODE, EditActivity.MODE_RECIPES);
-                startActivity(intentEditRecipes);
                 break;
 
             case R.id.ac_main_btn_diaryEdit:

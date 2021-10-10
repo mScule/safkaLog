@@ -1,5 +1,11 @@
 <resources>
+    <!--App-->
     <string name="app_name">SafkaLog</string>
+    <string name="app_welcomeMsg">
+        Hello! and welcome to SafkaLog. SafkaLog is a small "no nonsense" kcal counter, with simple
+        features. The reason you see this message maybe that you cleared the shared preferences, the
+        save state is corrupted, or you are new user. Please enjoy the app!
+    </string>
 
     <!--Shared-->
     <string name="sh_em_edit">&#128221;</string>
@@ -8,6 +14,7 @@
     <string name="sh_em_drink">&#9749;</string>
     <string name="sh_em_recipe">&#128220;</string>
 
+    <string name="sh_lb_toggle">Toggle</string>
     <string name="sh_lb_name">Name</string>
     <string name="sh_lb_kcal">Kcal</string>
     <string name="sh_lb_time">Time</string>
@@ -42,4 +49,6 @@
     <!--EditActivity-->
     <string name="ac_edit_lb_nothingToShow">Theres nothing to edit</string>
 
+    <!--ConsumptionLimitActivity-->
+    <string name="ac_consumptionLimit_lb_setLimit">Set kcal limit</string>
 </resources>

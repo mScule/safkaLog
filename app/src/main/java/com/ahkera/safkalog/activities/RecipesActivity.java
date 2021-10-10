@@ -15,6 +15,7 @@ import com.ahkera.safkalog.consumable.Consumable;
 import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.consumable.Recipe;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 
 /** @author Konsta
@@ -35,6 +36,12 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
         setContentView(R.layout.activity_recipes);
 
         updateRecycleViews();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SaveStateManager.saveState(this);
     }
 
     public void updateRecycleViews() {

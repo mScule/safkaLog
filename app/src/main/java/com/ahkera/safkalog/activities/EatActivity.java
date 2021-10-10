@@ -13,6 +13,7 @@ import com.ahkera.safkalog.consumable.Consumable;
 import com.ahkera.safkalog.diary.DiaryLog;
 import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 
 /**
@@ -33,6 +34,12 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         eatables.setLayoutManager(layoutManager);
         eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().consumables, this, this::onEatableClick));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SaveStateManager.saveState(this);
     }
 
     private void eat(Consumable consumable, int grams) {

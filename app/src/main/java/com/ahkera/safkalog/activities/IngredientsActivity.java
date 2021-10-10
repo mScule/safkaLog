@@ -9,6 +9,7 @@ import android.widget.EditText;
 import com.ahkera.safkalog.R;
 import com.ahkera.safkalog.consumable.Ingredient;
 import com.ahkera.safkalog.global.GlobalInstance;
+import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 
 /**
@@ -27,6 +28,12 @@ public class IngredientsActivity extends AppCompatActivity {
 
         inputName = findViewById(R.id.ac_ingredients_et_name);
         inputKcal = findViewById(R.id.ac_ingredients_et_kcal);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SaveStateManager.saveState(this);
     }
 
     public void addIngredient(View view) {
