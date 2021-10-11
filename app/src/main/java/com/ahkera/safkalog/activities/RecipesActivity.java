@@ -17,6 +17,9 @@ import com.ahkera.safkalog.consumable.Recipe;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
+import com.ahkera.safkalog.util.InputValidator;
+
+import java.util.ArrayList;
 
 /**
  * You can add ingredients to recipe by giving how many grams u want to add and pressing the ingredient.
@@ -63,6 +66,7 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     private void add(Consumable consumable, int grams) {
 
         GlobalInstance.getInstance().currentRecipe.add(new ConsumableUnit(consumable, grams));
+
         // Adding ingredients alert
         Alert.show(
                 this,
@@ -75,10 +79,9 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_recipes_et_inputGrams);
 
-        if (etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
+        if (InputValidator.isUnsignedInteger(this, "Grams", etGrams.getText().toString())) {
             Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int grams = Integer.parseInt(etGrams.getText().toString());
-
 
             add(consumable, grams);
             updateRecycleViews();
@@ -101,9 +104,13 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     public void onFinishClick(View view) {
         EditText recipeName = findViewById(R.id.ac_recipes_et_inputName);
 
-        if (recipeName.getText().toString() != null && !recipeName.getText().toString().equals("")) {
+        if (InputValidator.isContentful(this, "recipe name", recipeName.getText().toString())) {
             String name = recipeName.getText().toString();
-            GlobalInstance.getInstance().consumables.add(new Recipe(name, GlobalInstance.getInstance().currentRecipe));
+
+            // Saves the ingredients for SaveStateManager to handle
+            ArrayList<ConsumableUnit> cachedIngredients = new ArrayList(GlobalInstance.getInstance().currentRecipe);
+
+            GlobalInstance.getInstance().consumables.add(new Recipe(name, cachedIngredients));
             GlobalInstance.getInstance().currentRecipe.clear();
             updateRecycleViews();
 

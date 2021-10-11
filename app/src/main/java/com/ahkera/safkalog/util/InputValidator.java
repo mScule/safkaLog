@@ -28,6 +28,25 @@ public class InputValidator {
         return false;
     }
 
+    /** @return True if string has also other characters than spaces, tabs, and newlines */
+    public static boolean isContentful(Context context, @NonNull String fieldName, String string) {
+
+        if(stringExists(context, fieldName, string)) {
+            int count = 0;
+
+            char[] carr = string.toCharArray();
+
+            for(char c : carr)
+                if(c != '\n' && c != ' ' && c != '\t')
+                    count++;
+
+            if(count > 0)
+                return true;
+        }
+
+        return false;
+    }
+
     /** @return True if string is integer value (can be signed), false otherwise. */
     public static boolean isInteger(Context context, @NonNull String fieldName, String string) {
 
