@@ -26,6 +26,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:hint="@string/sh_lb_gramHint"
+
+        android:inputType="number"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/ac_eat_tv_grams"

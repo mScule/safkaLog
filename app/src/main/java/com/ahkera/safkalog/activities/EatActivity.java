@@ -51,7 +51,7 @@ public class EatActivity extends AppCompatActivity implements EatableAdapter.OnE
         // Consumable eaten alert
         Alert.show(
             this,
-            "You consumed " + grams + "grams of \"" + consumable.getName() + "\"",
+            "You consumed " + grams + " grams of \"" + consumable.getName() + "\"",
             "Ok"
         );
     }

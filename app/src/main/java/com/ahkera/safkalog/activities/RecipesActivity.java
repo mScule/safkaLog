@@ -19,10 +19,10 @@ import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 
 /** @author Konsta
- *
  * You can add ingredients to recipe by giving how many grams u want to add and pressing the ingredient.
  * after that the ingredient you picked shows up in current ingredients
  * You can name the recipe and click finish recipe and you have a recipe.
+ * @author Konsta
  */
 
 public class RecipesActivity extends AppCompatActivity implements EatableAdapter.OnEatableListener, RemovableAdapter.OnRemovableListener {
@@ -103,6 +103,7 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
         if (recipeName.getText().toString() != null && !recipeName.getText().toString().equals("")) {
             String name = recipeName.getText().toString();
             GlobalInstance.getInstance().consumables.add(new Recipe(name, GlobalInstance.getInstance().currentRecipe));
+            GlobalInstance.getInstance().currentRecipe.clear();
             updateRecycleViews();
 
         } else {

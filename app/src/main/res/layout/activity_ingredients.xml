@@ -33,6 +33,7 @@
         android:layout_marginEnd="16dp"
 
         android:textSize="24sp"
+        android:hint="@string/sh_lb_ingredientNameHint"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/ac_ingredients_tv_kcal"
@@ -64,6 +65,7 @@
         android:layout_marginEnd="16dp"
 
         android:inputType="number"
+        android:hint="@string/sh_lb_kcalPer100gHint"
 
         app:layout_constraintTop_toBottomOf="@id/ac_ingredients_et_name"
         app:layout_constraintStart_toEndOf="@id/ac_ingredients_tv_kcal"

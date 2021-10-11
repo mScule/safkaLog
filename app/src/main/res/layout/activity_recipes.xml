@@ -47,6 +47,8 @@
                 android:layout_marginTop="56dp"
                 android:hint="@string/sh_lb_gramHint"
 
+                android:inputType="number"
+
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ac_recipes_lb_grams"

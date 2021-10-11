@@ -3,7 +3,7 @@
     <string name="app_name">SafkaLog</string>
     <string name="app_welcomeMsg">
         Hello! and welcome to SafkaLog. SafkaLog is a small "no nonsense" kcal counter, with simple
-        features. The reason you see this message maybe that you cleared the shared preferences, the
+        features. The reason you see this message is that you cleared the shared preferences, the
         save state is corrupted, or you are new user. Please enjoy the app!
     </string>
 
@@ -18,7 +18,7 @@
     <string name="sh_lb_name">Name</string>
     <string name="sh_lb_kcal">Kcal</string>
     <string name="sh_lb_time">Time</string>
-    <string name="sh_lb_grams">Grams</string>
+    <string name="sh_lb_grams">G/ml</string>
     <string name="sh_lb_type">Type</string>
     <string name="sh_lb_date">Date</string>
     <string name="sh_lb_kcalPer100Grams">Kcal/100g</string>
@@ -39,8 +39,10 @@
     <string name="ac_eat_nothingToConsume">Theres nothing to consume</string>
 
     <!--RecipesActivity-->
+    <string name="sh_lb_kcalPer100gHint">How many kcal per 100g</string>
+    <string name="sh_lb_ingredientNameHint">Name of ingredient</string>
     <string name="sh_lb_recipeHint">Name of the new recipe</string>
-    <string name="sh_lb_gramHint">How many grams</string>
+    <string name="sh_lb_gramHint">How many grams/ml</string>
     <string name="sh_lb_addIngredients">Add ingredients</string>
     <string name="sh_lb_currentIngredients">Current ingredients</string>
     <string name="sh_btn_finishRecipe">Finish recipe</string>
