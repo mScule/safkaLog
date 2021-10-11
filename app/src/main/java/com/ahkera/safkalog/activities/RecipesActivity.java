@@ -79,7 +79,7 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_recipes_et_inputGrams);
 
-        if (InputValidator.isUnsignedInteger(this, "Grams", etGrams.getText().toString())) {
+        if (InputValidator.isUnsignedInteger(etGrams.getText().toString())) {
             Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int grams = Integer.parseInt(etGrams.getText().toString());
 
@@ -104,7 +104,7 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     public void onFinishClick(View view) {
         EditText recipeName = findViewById(R.id.ac_recipes_et_inputName);
 
-        if (InputValidator.isContentful(this, "recipe name", recipeName.getText().toString())) {
+        if (InputValidator.isContentful(recipeName.getText().toString())) {
             String name = recipeName.getText().toString();
 
             // Saves the ingredients for SaveStateManager to handle

@@ -58,7 +58,21 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Checking the type of the removable
-        if (removable instanceof Consumable) {
+
+        if (removable instanceof ConsumableUnit) {
+
+            ConsumableUnit eatableUnit = (ConsumableUnit) removable;
+
+            inflater.inflate(R.layout.removable_eatable_unit, holder.removable);
+
+            TextView
+                    name  = holder.removable.findViewById(R.id.removable_eatableUnit_tv_name),
+                    grams = holder.removable.findViewById(R.id.removable_eatableUnit_tv_grams);
+
+            name.setText(eatableUnit.getName());
+            grams.setText(Integer.toString(eatableUnit.getGrams()));
+
+        } else if (removable instanceof Consumable) {
 
             Consumable consumable = (Consumable) removable;
 
@@ -81,19 +95,6 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
 
             name.setText(consumable.getName());
             kcal.setText(Integer.toString(consumable.getKcal()));
-
-        } else if (removable instanceof ConsumableUnit) {
-
-            ConsumableUnit eatableUnit = (ConsumableUnit) removable;
-
-            inflater.inflate(R.layout.removable_eatable_unit, holder.removable);
-
-            TextView
-                name  = holder.removable.findViewById(R.id.removable_eatableUnit_tv_name),
-                grams = holder.removable.findViewById(R.id.removable_eatableUnit_tv_grams);
-
-            name.setText(eatableUnit.getName());
-            grams.setText(eatableUnit.getGrams());
 
         } else if (removable instanceof DiaryLog) {
 
