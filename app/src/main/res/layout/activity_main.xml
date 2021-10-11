@@ -17,8 +17,8 @@
 
             <ImageButton
                 android:id="@+id/ac_main_btn_consumptionLimit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="60dp"
 
                 android:layout_margin="16dp"
                 android:onClick="buttonEvents"
@@ -27,6 +27,20 @@
                 android:src="@drawable/ic_consumption_limit"
 
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/ac_main_btn_recipeBook"
+                android:layout_width="55dp"
+                android:layout_height="60dp"
+
+                android:layout_margin="16dp"
+                android:onClick="buttonEvents"
+
+                android:background="@color/transparent"
+                android:src="@drawable/ic_recipe"
+
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!--Today's Total Kcal Row-->
@@ -134,7 +148,8 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ac_main_ll_diaryLogTodayLabels"></androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@id/ac_main_ll_diaryLogTodayLabels">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <!--Eat Row-->
             <Button

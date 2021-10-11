@@ -1,5 +1,7 @@
 package com.ahkera.safkalog.consumable;
 
+import androidx.annotation.NonNull;
+
 /**
  * Contains the consumable item and the amount of it consumed in grams.
  * @author Vilhelm
@@ -28,4 +30,10 @@ public class ConsumableUnit extends Consumable {
 
     /** @return The amount of grams that the unit was consumed. */
     public int getGrams() { return grams; }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return getName() + " kcal: " + Integer.toString(getKcal()) + " grams: " + Integer.toString(getGrams());
+    }
 }

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +26,10 @@ import com.ahkera.safkalog.util.Alert;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView diaryLogsToday;
-    private LinearLayout labelDiaryLogToday;
-    private TextView     valueTodayTotalKcal;
+    private RecyclerView    diaryLogsToday;
+    private LinearLayout    labelDiaryLogToday;
+    private TextView        valueTodayTotalKcal;
+    private DiaryLogAdapter diaryLogAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Hello message check
         if(!SaveStateManager.stateExists(this))
             Alert.show(this, getString(R.string.app_welcomeMsg), "Nice. Let's go");
         else
@@ -46,7 +47,14 @@ public class MainActivity extends AppCompatActivity {
         labelDiaryLogToday  = findViewById(R.id.ac_main_ll_diaryLogTodayLabels);
         diaryLogsToday      = findViewById(R.id.ac_main_rv_diaryLogsToday);
 
-        checkDay();
+        diaryLogAdapter = new DiaryLogAdapter(GlobalInstance.getInstance().diaryDateToday.getLogs(), this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        updateTodayLog();
     }
 
     @Override
@@ -59,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        checkDay();
         updateTodayLog();
     }
 
@@ -73,13 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(GlobalInstance.getInstance().diaryDateToday.getLogs().isEmpty()) {
             labelDiaryLogToday.setVisibility(INVISIBLE);
-            diaryLogsToday.setVisibility(INVISIBLE);
         } else {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
             diaryLogsToday.setLayoutManager(layoutManager);
-            diaryLogsToday.setAdapter(
-                    new DiaryLogAdapter(GlobalInstance.getInstance().diaryDateToday.getLogs(),this)
-            );
+            diaryLogsToday.setAdapter(diaryLogAdapter);
         }
     }
 
@@ -96,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Create new current day
             GlobalInstance.getInstance().diaryDateToday = new DiaryDate();
+
         }
     }
 
@@ -104,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ac_main_btn_consumptionLimit:
                 Intent intentConsumptionLimit = new Intent(this, ConsumptionLimitActivity.class);
                 startActivity(intentConsumptionLimit);
+                break;
+
+            case R.id.ac_main_btn_recipeBook:
+                Intent intentRecipeBook = new Intent(this, RecipeBookActivity.class);
+                startActivity(intentRecipeBook);
                 break;
 
             case R.id.ac_main_btn_eat:

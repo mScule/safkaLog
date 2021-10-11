@@ -3,16 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_consumption_limit.xml" value="0.3046875" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_consumptionlimit.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_edit_pen.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_joint_down.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_joint_slim_down.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_joint_slim_up.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_joint_up.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_recipe.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/drawable/ic_settings_gear.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_consumption_limit.xml" value="0.5" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_diary.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_diary_log.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_eat.xml" value="0.25" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_edit.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_ingredients.xml" value="0.25" />
-        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_recipe_book.xml" value="0.28854166666666664" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_recipe_book_recipe.xml" value="0.26927083333333335" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_recipe_viewer.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_recipes.xml" value="0.33" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_consumable_unit.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_diary_date.xml" value="0.1" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_diary_log.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_eatable.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_recipe_book_recipe.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_removable.xml" value="0.22" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_space.xml" value="0.1" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_textview_centered.xml" value="0.16197916666666667" />
@@ -24,10 +39,6 @@
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/row_diarylog.xml" value="0.33" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/row_eatable.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/subitem_removable_eatable.xml" value="0.2203125" />
-        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_eat.xml" value="0.15185185185185185" />
-        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_ingredients.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_recipes.xml" value="0.15185185185185185" />
-        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/item_eatable.xml" value="0.15185185185185185" />
       </map>
     </option>
   </component>

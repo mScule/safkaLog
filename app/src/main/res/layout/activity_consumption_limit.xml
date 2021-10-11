@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +15,9 @@
         android:textStyle="bold"
         android:text="@string/ac_consumptionLimit_lb_setLimit"
 
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/ac_consumptionLimit_gl_bottom"
@@ -31,7 +34,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/ac_consumptionLimit_gl_bottom"
         app:layout_constraintStart_toEndOf="@id/ac_consumptionLimit_tv_setLimit"
-        app:layout_constraintEnd_toStartOf="@id/ac_consumptionLimit_tb_setLimit"/>
+        app:layout_constraintEnd_toStartOf="@id/ac_consumptionLimit_btn_setLimit"/>
+
+    <Button
+        android:id="@+id/ac_consumptionLimit_btn_setLimit"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:text="@string/sh_lb_set"
+        android:onClick="setLimitSize"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ac_consumptionLimit_et_setLimit"
+        app:layout_constraintEnd_toStartOf="@id/ac_consumptionLimit_tb_setLimit" />
 
     <ToggleButton
         android:id="@+id/ac_consumptionLimit_tb_setLimit"
@@ -42,7 +59,7 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/ac_consumptionLimit_gl_bottom"
-        app:layout_constraintStart_toEndOf="@id/ac_consumptionLimit_et_setLimit"
+        app:layout_constraintStart_toEndOf="@id/ac_consumptionLimit_btn_setLimit"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.Guideline

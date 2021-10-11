@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.ahkera.safkalog.R;
-import com.ahkera.safkalog.adapters.EatableAdapter;
+import com.ahkera.safkalog.adapters.ConsumableAdapter;
 import com.ahkera.safkalog.adapters.RemovableAdapter;
 import com.ahkera.safkalog.consumable.Consumable;
 import com.ahkera.safkalog.consumable.ConsumableUnit;
@@ -18,14 +18,14 @@ import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 
-/** @author Konsta
+/**
  * You can add ingredients to recipe by giving how many grams u want to add and pressing the ingredient.
  * after that the ingredient you picked shows up in current ingredients
  * You can name the recipe and click finish recipe and you have a recipe.
  * @author Konsta
  */
 
-public class RecipesActivity extends AppCompatActivity implements EatableAdapter.OnEatableListener, RemovableAdapter.OnRemovableListener {
+public class RecipesActivity extends AppCompatActivity implements ConsumableAdapter.OnConsumableListener, RemovableAdapter.OnRemovableListener {
 
     private RecyclerView eatables;
     private RecyclerView currentRecipe;
@@ -50,7 +50,7 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
 
         LinearLayoutManager layoutManagerUpper = new LinearLayoutManager(this);
         eatables.setLayoutManager(layoutManagerUpper);
-        eatables.setAdapter(new EatableAdapter(GlobalInstance.getInstance().consumables, this, this::onEatableClick));
+        eatables.setAdapter(new ConsumableAdapter(GlobalInstance.getInstance().consumables, this, this::onConsumableClick));
 
         //Lower RecyclerView
         currentRecipe = findViewById(R.id.ac_currentIngredients_rv);
@@ -72,12 +72,13 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
     }
 
     @Override
-    public void onEatableClick(int position) {
+    public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_recipes_et_inputGrams);
 
         if (etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
             Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int grams = Integer.parseInt(etGrams.getText().toString());
+
 
             add(consumable, grams);
             updateRecycleViews();
@@ -113,6 +114,5 @@ public class RecipesActivity extends AppCompatActivity implements EatableAdapter
                     "Ok"
             );
         }
-
     }
 }

@@ -22,7 +22,7 @@
     <string name="sh_lb_type">Type</string>
     <string name="sh_lb_date">Date</string>
     <string name="sh_lb_kcalPer100Grams">Kcal/100g</string>
-
+    <string name="sh_lb_set">Set</string>
     <string name="sh_btn_add">Add</string>
 
     <!--MainActivity-->
@@ -53,4 +53,13 @@
 
     <!--ConsumptionLimitActivity-->
     <string name="ac_consumptionLimit_lb_setLimit">Set kcal limit</string>
+    <string name="ac_consumptionLimit_msg_activated">Consumption limiter is activated</string>
+    <string name="ac_consumptionLimit_msg_deactivated">Consumption limiter is deactivated</string>
+
+    <!--InputValidator-->
+    <string name="inputValidator_err_int">The value has to be an integer</string>
+    <string name="inputValidator_err_uInt">The value has to be an unsigned integer</string>
+
+    <!--RecipeBookRecipe-->
+    <string name="ac_recipeBookRecipe_lb_ingredients">Ingredients list</string>
 </resources>

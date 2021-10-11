@@ -20,16 +20,16 @@ import java.util.ArrayList;
  * Custom RecycleView Adapter for Consumable objects.
  * @author Vilhelm
  */
-public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactHolder> {
+public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.ContactHolder> {
 
-    private OnEatableListener mOnEatableListener;
+    private OnConsumableListener mOnConsumableListener;
     private ArrayList<Consumable> consumables;
     private Context context;
 
-    public EatableAdapter(ArrayList<Consumable> consumables, Context context, OnEatableListener mOnEatableListener) {
+    public ConsumableAdapter(ArrayList<Consumable> consumables, Context context, OnConsumableListener mOnConsumableListener) {
         this.consumables = consumables;
         this.context  = context;
-        this.mOnEatableListener = mOnEatableListener;
+        this.mOnConsumableListener = mOnConsumableListener;
     }
 
     @NonNull
@@ -37,7 +37,7 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.item_eatable, parent, false);
-        return new ContactHolder(view, mOnEatableListener);
+        return new ContactHolder(view, mOnConsumableListener);
     }
 
     @Override
@@ -76,14 +76,14 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
     public class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView eatableType, eatableName;
-        private OnEatableListener onEatableListener;
+        private OnConsumableListener onConsumableListener;
 
-        public ContactHolder(@NonNull View itemView, OnEatableListener onEatableListener) {
+        public ContactHolder(@NonNull View itemView, OnConsumableListener onConsumableListener) {
             super(itemView);
 
             eatableType = itemView.findViewById(R.id.it_eatable_tv_eatableType);
             eatableName = itemView.findViewById(R.id.it_eatable_tv_eatableName);
-            this.onEatableListener = onEatableListener;
+            this.onConsumableListener = onConsumableListener;
 
             itemView.setOnClickListener(this);
         }
@@ -97,11 +97,11 @@ public class EatableAdapter extends RecyclerView.Adapter<EatableAdapter.ContactH
 
         @Override
         public void onClick(View view) {
-            onEatableListener.onEatableClick(getAdapterPosition());
+            onConsumableListener.onConsumableClick(getAdapterPosition());
         }
     }
 
-    public interface OnEatableListener {
-        void onEatableClick(int position);
+    public interface OnConsumableListener {
+        void onConsumableClick(int position);
     }
 }

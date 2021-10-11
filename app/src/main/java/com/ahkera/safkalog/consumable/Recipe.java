@@ -31,4 +31,8 @@ public class Recipe extends Consumable {
     public String getName() {
         return name;
     }
+
+    public ArrayList<ConsumableUnit> getIngredients() {
+        return ingredients;
+    }
 }
