@@ -20,6 +20,10 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
+/**
+ * User accesses the recipes through the "RecipeBook", that holds every recipe.
+ * @author Vilhelm
+ */
 public class RecipeBookActivity extends AppCompatActivity implements ConsumableAdapter.OnConsumableListener {
 
     private RecyclerView recyclerView;
@@ -36,7 +40,6 @@ public class RecipeBookActivity extends AppCompatActivity implements ConsumableA
         for(Consumable consumable : GlobalInstance.getInstance().consumables)
             if(consumable instanceof Recipe)
                 recipes.add(consumable);
-
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 

@@ -16,6 +16,7 @@ import com.ahkera.safkalog.consumable.ConsumableUnit;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
+import com.ahkera.safkalog.util.InputValidator;
 
 /**
  * Asks user the grams of the consumable and creates DiaryLog and adds it to the currentDiaryDate.
@@ -87,11 +88,20 @@ public class EatActivity extends AppCompatActivity implements ConsumableAdapter.
     public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_eat_et_grams);
 
-        if(etGrams.getText().toString() != null && !etGrams.getText().toString().equals("")) {
-            Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
+        if(InputValidator.isUnsignedInteger(etGrams.getText().toString())) {
+
             int     grams = Integer.parseInt(etGrams.getText().toString());
 
-            eat(consumable, grams);
+            if(grams > 0) {
+                Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
+                eat(consumable, grams);
+            } else {
+                Alert.show(
+                    this,
+                    "Grams can't be zero or smaller value",
+                    "Ok"
+                );
+            }
         } else {
             Alert.show(
                 this,

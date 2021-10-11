@@ -14,6 +14,10 @@ import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
 import com.ahkera.safkalog.util.InputValidator;
 
+/**
+ * User sets the consumption limit through this activity.
+ * @author Vilhelm
+ */
 public class ConsumptionLimitActivity extends AppCompatActivity {
 
     private EditText editText;

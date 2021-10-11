@@ -1,5 +1,7 @@
 package com.ahkera.safkalog.consumable;
 
+import com.ahkera.safkalog.util.Alert;
+
 import java.util.ArrayList;
 
 /**
@@ -16,8 +18,15 @@ public class Recipe extends Consumable {
         this.name = name;
         this.ingredients = ingredients;
 
-        for(ConsumableUnit unit : ingredients)
+        int gramsTotal = 0;
+
+        for(ConsumableUnit unit : ingredients) {
             kcalTotal += unit.getKcal();
+            gramsTotal += unit.getGrams();
+        }
+
+        if(gramsTotal != 0)
+            kcalTotal = kcalTotal * 100 / gramsTotal;
     }
 
     /** @return The total kilocalorie amount. */

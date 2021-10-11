@@ -1,5 +1,7 @@
 package com.ahkera.safkalog.consumable;
 
+
+
 import androidx.annotation.NonNull;
 
 /**
@@ -25,7 +27,7 @@ public class ConsumableUnit extends Consumable {
     /** @return The kilocalories of the consumed unit. */
     @Override
     public int getKcal() {
-        return grams * consumable.getKcal() / 100;
+        return (int) Math.round((double)grams * (double)consumable.getKcal() / 100.0);
     }
 
     /** @return The amount of grams that the unit was consumed. */

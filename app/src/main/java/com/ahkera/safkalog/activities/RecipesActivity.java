@@ -69,9 +69,9 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
 
         // Adding ingredients alert
         Alert.show(
-                this,
-                grams + " grams of \"" + consumable.getName() + "\"" + " added to current ingredients.",
-                "Ok"
+            this,
+            grams + " grams of \"" + consumable.getName() + "\"" + " added to current ingredients.",
+            "Ok"
         );
     }
 
@@ -83,13 +83,21 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
             Consumable consumable = GlobalInstance.getInstance().consumables.get(position);
             int grams = Integer.parseInt(etGrams.getText().toString());
 
-            add(consumable, grams);
+            if(grams > 0) {
+                add(consumable, grams);
+            } else {
+                Alert.show(
+                    this,
+                    "You can't add zero or less grams.",
+                    "Ok"
+                );
+            }
             updateRecycleViews();
 
         } else {
             Alert.show(
                     this,
-                    "You have to give the amount of the ingredient in grams before you proceed to add one.",
+                    "You have to give the amount of the ingredient in grams before you proceed to finish one.",
                     "Ok"
             );
         }
@@ -102,22 +110,32 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
     }
 
     public void onFinishClick(View view) {
-        EditText recipeName = findViewById(R.id.ac_recipes_et_inputName);
 
-        if (InputValidator.isContentful(recipeName.getText().toString())) {
-            String name = recipeName.getText().toString();
+        if (GlobalInstance.getInstance().currentRecipe.size() != 0) {
 
-            // Saves the ingredients for SaveStateManager to handle
-            ArrayList<ConsumableUnit> cachedIngredients = new ArrayList(GlobalInstance.getInstance().currentRecipe);
+            EditText recipeName = findViewById(R.id.ac_recipes_et_inputName);
 
-            GlobalInstance.getInstance().consumables.add(new Recipe(name, cachedIngredients));
-            GlobalInstance.getInstance().currentRecipe.clear();
-            updateRecycleViews();
+            if (InputValidator.isContentful(recipeName.getText().toString())) {
+                String name = recipeName.getText().toString();
 
+                // Saves the ingredients for SaveStateManager to handle
+                ArrayList<ConsumableUnit> cachedIngredients = new ArrayList(GlobalInstance.getInstance().currentRecipe);
+
+                GlobalInstance.getInstance().consumables.add(new Recipe(name, cachedIngredients));
+                GlobalInstance.getInstance().currentRecipe.clear();
+                updateRecycleViews();
+
+            } else {
+                Alert.show(
+                        this,
+                        "You have to give name for the new recipe.",
+                        "Ok"
+                );
+            }
         } else {
             Alert.show(
-                    this,
-                    "You have to give name for the new recipe.",
+                this,
+                "You have insert ingredients into the recipe before proceeding to finish one.",
                     "Ok"
             );
         }

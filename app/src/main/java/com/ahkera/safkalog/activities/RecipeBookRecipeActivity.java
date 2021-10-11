@@ -13,6 +13,10 @@ import com.ahkera.safkalog.consumable.Recipe;
 import com.ahkera.safkalog.global.gson.GsonSingleton;
 import com.google.gson.Gson;
 
+/**
+ * Shows to the user the selected Recipe from the RecipeBook.
+ * @author Vilhelm
+ */
 public class RecipeBookRecipeActivity extends AppCompatActivity {
 
     public static final String EXTRA_RECIPE =

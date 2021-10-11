@@ -11,11 +11,13 @@ import com.ahkera.safkalog.consumable.Ingredient;
 import com.ahkera.safkalog.global.GlobalInstance;
 import com.ahkera.safkalog.global.SaveStateManager;
 import com.ahkera.safkalog.util.Alert;
+import com.ahkera.safkalog.util.InputValidator;
 
 /**
  * Asks the user to give the name and kilocalories per 100g from to user.
+ *
  * @author Vilhelm
-*/
+ */
 
 public class IngredientsActivity extends AppCompatActivity {
 
@@ -37,15 +39,26 @@ public class IngredientsActivity extends AppCompatActivity {
     }
 
     public void addIngredient(View view) {
-        String name = inputName.getText().toString();
-        int    kcal = Integer.parseInt(inputKcal.getText().toString());
-        GlobalInstance.getInstance().consumables.add(new Ingredient(name, kcal));
 
-        // New food added alert
-        Alert.show(
-            this,
-            "New consumable \"" + name + "\" added with " + kcal + " kcal",
-            "Ok"
-        );
+        String
+            name = inputName.getText().toString(),
+            kcalString = inputKcal.getText().toString();
+
+        if (
+            InputValidator.isContentful(this, "ingredient name", name) &&
+            InputValidator.isUnsignedInteger(this, "ingredient kcal", kcalString)) {
+
+            int kcal = Integer.parseInt(inputKcal.getText().toString());
+
+            GlobalInstance.getInstance().consumables.add(new Ingredient(name, kcal));
+
+            // New food added alert
+            Alert.show(
+                    this,
+                    "New consumable \"" + name + "\" added with " + kcal + " kcal",
+                    "Ok"
+            );
+
+        }
     }
 }
