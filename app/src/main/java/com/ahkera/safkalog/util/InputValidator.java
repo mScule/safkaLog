@@ -34,7 +34,7 @@ public class InputValidator {
         if(stringExists(string))
             return true;
 
-        Alert.show(context, "Field " + fieldName + " can't be empty!", "Ok");
+        Alert.show(context, fieldName + " field can't be empty!", "Ok");
         return false;
     }
 

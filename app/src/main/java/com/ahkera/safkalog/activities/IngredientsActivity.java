@@ -45,8 +45,8 @@ public class IngredientsActivity extends AppCompatActivity {
             kcalString = inputKcal.getText().toString();
 
         if (
-            InputValidator.isContentful(this, "ingredient name", name) &&
-            InputValidator.isUnsignedInteger(this, "ingredient kcal", kcalString)) {
+            InputValidator.isContentful(this, "Name", name) &&
+            InputValidator.isUnsignedInteger(this, "Kcal", kcalString)) {
 
             int kcal = Integer.parseInt(inputKcal.getText().toString());
 
