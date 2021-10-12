@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_diary.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_diary_log.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_eat.xml" value="0.25" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_edit.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_ingredients.xml" value="0.25" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/activity_recipes.xml" value="0.33" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_diary_date.xml" value="0.1" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_diary_log.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_eatable.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_removable.xml" value="0.22" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_space.xml" value="0.1" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/item_textview_centered.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/removable_diary_date.xml" value="0.234375" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/removable_diary_log.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/removable_eatable.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/removable_eatable_unit.xml" value="0.2203125" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/row_diary_log.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/row_diarylog.xml" value="0.33" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/row_eatable.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/Vilhe/AndroidStudioProjects/safkalog/app/src/main/res/layout/subitem_removable_eatable.xml" value="0.2203125" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/drawable/custom_button.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_consumption_limit.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_diary.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_diary_log.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_eat.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_edit.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_ingredients.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_recipe_book.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_recipe_book_recipe.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/activity_recipes.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/item_consumable_unit.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/item_diary_date.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/item_diary_log.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/item_eatable.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/item_removable.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/removable_diary_date.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/removable_diary_log.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/removable_eatable.xml" value="0.2" />
+        <entry key="..\:/Users/justk/AndroidStudioProjects/safkaLog-master/app/src/main/res/layout/removable_eatable_unit.xml" value="0.2" />
+        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_consumption_limit.xml" value="0.264" />
+        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_eat.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_ingredients.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/activity_recipes.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/konst/AndroidStudioProjects/safkaLog/app/src/main/res/layout/item_eatable.xml" value="0.15185185185185185" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

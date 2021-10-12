@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.IngredientsActivity">
+
+    <TextView
+        android:id="@+id/ac_ingredients_tv_name"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+
+        android:text="@string/sh_lb_name"
+        android:textSize="24sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/ac_ingredients_et_name"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:textSize="24sp"
+        android:hint="@string/sh_lb_ingredientNameHint"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ac_ingredients_tv_kcal"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/ac_ingredients_tv_kcal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+
+        android:text="@string/sh_lb_kcalPer100Grams"
+        android:textSize="24sp"
+
+        app:layout_constraintTop_toBottomOf="@id/ac_ingredients_et_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/ac_ingredients_et_kcal"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:inputType="number"
+        android:hint="@string/sh_lb_kcalPer100gHint"
+
+        app:layout_constraintTop_toBottomOf="@id/ac_ingredients_et_name"
+        app:layout_constraintStart_toEndOf="@id/ac_ingredients_tv_kcal"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/ac_ingredients_btn_add"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_button"
+        android:textAllCaps="false"
+        android:text="@string/sh_btn_add"
+
+        android:onClick="addIngredient"
+
+        app:layout_constraintTop_toBottomOf="@id/ac_ingredients_et_kcal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
