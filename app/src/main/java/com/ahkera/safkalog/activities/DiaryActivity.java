@@ -35,6 +35,7 @@ public class DiaryActivity extends AppCompatActivity implements DiaryDateAdapter
         );
     }
 
+    /** Starts starts new activity with diary date intent */
     @Override
     public void onDiaryDateClick(int position) {
         Intent diaryDateIntent = new Intent(this, DiaryLogActivity.class);

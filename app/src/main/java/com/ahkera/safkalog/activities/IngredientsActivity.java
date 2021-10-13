@@ -15,7 +15,6 @@ import com.ahkera.safkalog.util.InputValidator;
 
 /**
  * Asks the user to give the name and kilocalories per 100g from to user.
- *
  * @author Vilhelm
  */
 
@@ -38,6 +37,7 @@ public class IngredientsActivity extends AppCompatActivity {
         SaveStateManager.saveState(this);
     }
 
+    /** Adds ingredient to consumables */
     public void addIngredient(View view) {
 
         String

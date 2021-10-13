@@ -59,6 +59,10 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
         SaveStateManager.saveState(this);
     }
 
+    /**
+     * Will update the recyclerview
+     * @param mode The mode sets what type of information is fetched for the removable adapter
+     */
     private void updateRemovables(int mode) {
 
         ArrayList<?> editablesList = new ArrayList();
@@ -90,6 +94,10 @@ public class EditActivity extends AppCompatActivity implements RemovableAdapter.
         }
     }
 
+    /**
+     * Event that the removable adapter binds to the recycler view item
+     * @param position The position in the arraylist
+     */
     @Override
     public void onRemovableClick(int position) {
         switch(editMode) {

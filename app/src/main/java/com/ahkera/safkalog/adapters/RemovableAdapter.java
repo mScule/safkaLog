@@ -44,6 +44,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         this.mOnRemovableListener = onRemovableListener;
     }
 
+    /** The method that inflates the layout from the contactholder */
     @NonNull
     @Override
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,6 +53,11 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         return new ContactHolder(view, mOnRemovableListener);
     }
 
+    /***
+     * Binds the given information to the contact holder layout
+     * @param holder the contactholder that holds the custom layout
+     * @param position the location of the item in the arraylist
+     */
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
         final Object removable = removables.get(position);
@@ -130,6 +136,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         }
     }
 
+    /** Gets the item count */
     @Override
     public int getItemCount() { return removables == null ? 0 : removables.size(); }
 
@@ -137,6 +144,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         public LinearLayout removable;
         private ImageButton removeButton;
 
+        /** binds the click event and views */
         public ContactHolder(@NonNull View itemView, OnRemovableListener onRemovableListener) {
             super(itemView);
 
@@ -152,6 +160,7 @@ public class RemovableAdapter extends RecyclerView.Adapter<RemovableAdapter.Cont
         }
     }
 
+    /** Interface for giving the change of creating custom click events */
     public interface OnRemovableListener {
         void onRemovableClick(int position);
     }

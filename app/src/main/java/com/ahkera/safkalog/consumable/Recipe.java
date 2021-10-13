@@ -1,7 +1,5 @@
 package com.ahkera.safkalog.consumable;
 
-import com.ahkera.safkalog.util.Alert;
-
 import java.util.ArrayList;
 
 /**
@@ -15,6 +13,8 @@ public class Recipe extends Consumable {
     private int kcalTotal;
 
     public Recipe(String name, ArrayList<ConsumableUnit> ingredients) {
+
+        // The recipe calculates its total kcal here
         this.name = name;
         this.ingredients = ingredients;
 

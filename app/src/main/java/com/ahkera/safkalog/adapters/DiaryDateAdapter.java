@@ -30,6 +30,7 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
         this.mOnDiaryDateListener = mOnDiaryDateListener;
     }
 
+    /** The method that inflates the layout from the contactholder */
     @NonNull
     @Override
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,6 +39,11 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
         return new ContactHolder(view, mOnDiaryDateListener);
     }
 
+    /***
+     * Binds the given information to the contact holder layout
+     * @param holder the contactholder that holds the custom layout
+     * @param position the location of the item in the arraylist
+     */
     @Override
     public void onBindViewHolder(@NonNull DiaryDateAdapter.ContactHolder holder, int position) {
         final DiaryDate diaryDate = diaryDates.get(position);
@@ -46,6 +52,7 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
         holder.setDiaryDateKcalTotal(Integer.toString(diaryDate.getKcalTotal()));
     }
 
+    /** Gets the item count */
     @Override
     public int getItemCount() { return diaryDates == null ? 0 : diaryDates.size(); }
 
@@ -54,6 +61,7 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
         private TextView diaryDateDate, diaryDateKcalTotal;
         private OnDiaryDateListener onDiaryDateListener;
 
+        /** binds the click event and views */
         public ContactHolder(@NonNull View itemView, OnDiaryDateListener onDiaryDateListener) {
             super(itemView);
 
@@ -64,7 +72,10 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
             itemView.setOnClickListener(this);
         }
 
+        /** Setter for the date */
         public void setDiaryDateDate(String date) { this.diaryDateDate.setText(date); }
+
+        /** Setter for the kcal total */
         public void setDiaryDateKcalTotal(String date) { this.diaryDateKcalTotal.setText(date); }
 
         @Override
@@ -73,6 +84,7 @@ public class DiaryDateAdapter extends RecyclerView.Adapter<DiaryDateAdapter.Cont
         }
     }
 
+    /** Interface for giving the change of creating custom click events */
     public interface OnDiaryDateListener {
         void onDiaryDateClick(int position);
     }

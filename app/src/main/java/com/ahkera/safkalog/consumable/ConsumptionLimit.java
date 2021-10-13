@@ -23,10 +23,12 @@ public class ConsumptionLimit {
         return toggled;
     }
 
+    /** Setter for the kcal */
     public void setKcal(int kcal) {
         this.kcal = kcal;
     }
 
+    /** Setter for the toggled boolean */
     public void setToggled(boolean toggled) {
         this.toggled = toggled;
     }

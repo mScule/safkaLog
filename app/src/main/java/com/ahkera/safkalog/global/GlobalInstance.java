@@ -35,6 +35,7 @@ public class GlobalInstance {
         return global;
     }
 
+    /** Can be used to load different saved instance state. */
     public static void setInstance(GlobalInstance globalInstance) {
         if(globalInstance.diaryDateToday != null)
             getInstance().diaryDateToday = globalInstance.diaryDateToday;

@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         updateTodayLog();
     }
 
+    /** Updates the today log recycler view */
     private void updateTodayLog() {
 
         checkDay();
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the current date in GlobalInstance matches with the current date in the Calendar.
+     * If not, new day is created, and the old one is added to the diary
+     */
     private void checkDay() {
 
         // Checking the date. If changed. Set new day.
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /** Contains cases for every button in the mainactivity */
     public void buttonEvents(View view) {
         switch(view.getId()) {
             case R.id.ac_main_btn_consumptionLimit:

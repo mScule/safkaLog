@@ -47,6 +47,7 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
         SaveStateManager.saveState(this);
     }
 
+    /** Updates the recycle views */
     public void updateRecycleViews() {
         //Upper RecyclerView
         eatables = findViewById(R.id.ac_ingredientsCatalog_rv);
@@ -63,6 +64,11 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
         currentRecipe.setAdapter(new RemovableAdapter(GlobalInstance.getInstance().currentRecipe, this, this::onRemovableClick));
     }
 
+    /**
+     * Adds the consumable to the current ingredients "staging area"
+     * @param consumable The desider consumable
+     * @param grams The amount in grams
+     */
     private void add(Consumable consumable, int grams) {
 
         GlobalInstance.getInstance().currentRecipe.add(new ConsumableUnit(consumable, grams));
@@ -75,6 +81,10 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
         );
     }
 
+    /**
+     * The click event that the consumable adapter binds to the right recycleview item
+     * @param position the position at the arraylist
+     */
     @Override
     public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_recipes_et_inputGrams);
@@ -103,12 +113,17 @@ public class RecipesActivity extends AppCompatActivity implements ConsumableAdap
         }
     }
 
+    /**
+     * The click event that the removable adapter binds to the right recycleview item
+     * @param position the position at the arraylist
+     */
     @Override
     public void onRemovableClick(int position) {
         GlobalInstance.getInstance().currentRecipe.remove(position);
         updateRecycleViews();
     }
 
+    /** Finish button event for finishing the recipe */
     public void onFinishClick(View view) {
 
         if (GlobalInstance.getInstance().currentRecipe.size() != 0) {

@@ -23,6 +23,7 @@ public class ConsumptionLimitActivity extends AppCompatActivity {
     private EditText editText;
     private ToggleButton toggleButton;
 
+    /** Shows alert to user, that the consumption limit is activated */
     private void showAlertActivated() {
         Alert.show(
             this,
@@ -31,6 +32,7 @@ public class ConsumptionLimitActivity extends AppCompatActivity {
         );
     }
 
+    /** Shows alert to user, that the consumption limit is deactivated */
     private void showAlertDeactivated() {
         Alert.show(
             this,
@@ -39,6 +41,7 @@ public class ConsumptionLimitActivity extends AppCompatActivity {
         );
     }
 
+    /** Sets the consumption limit */
     public void setLimitSize(View view) {
         String input = editText.getText().toString();
 

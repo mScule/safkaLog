@@ -5,6 +5,11 @@ import com.ahkera.safkalog.consumable.gson.ConsumableAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * The safkalog uses gson pretty heavy handedly, so there's Single instance that the whole app can
+ * use at any point.
+ * @author Vilhelm
+ */
 public class GsonSingleton {
 
     public Gson gson;

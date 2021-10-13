@@ -44,6 +44,11 @@ public class EatActivity extends AppCompatActivity implements ConsumableAdapter.
         SaveStateManager.saveState(this);
     }
 
+    /**
+     * The method for consumption
+     * @param consumable item that will be consumed
+     * @param grams the amount in grams
+     */
     private void eat(Consumable consumable, int grams) {
 
         GlobalInstance.getInstance().diaryDateToday.addLog(
@@ -52,6 +57,7 @@ public class EatActivity extends AppCompatActivity implements ConsumableAdapter.
 
         ConsumptionLimit limit = GlobalInstance.getInstance().consumptionLimit;
 
+        // Checks for the consumption limiter
         if(limit.isToggled()) {
             int kcalLeft = limit.getKcal() - GlobalInstance.getInstance().diaryDateToday.getKcalTotal();
 
@@ -84,6 +90,10 @@ public class EatActivity extends AppCompatActivity implements ConsumableAdapter.
         }
     }
 
+    /**
+     * The event that the consumable adapter will bind to the recyclerview item
+     * @param position The position in the arraylist
+     */
     @Override
     public void onConsumableClick(int position) {
         EditText etGrams = findViewById(R.id.ac_eat_et_grams);

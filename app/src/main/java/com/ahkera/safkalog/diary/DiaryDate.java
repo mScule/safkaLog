@@ -30,6 +30,7 @@ public class DiaryDate {
         kcalSum = 0;
     }
 
+    /** Refreshes the total kcal amount */
     private void refreshKcalTotal() {
         kcalSum = 0;
 
@@ -37,11 +38,19 @@ public class DiaryDate {
             kcalSum += log.getEatableUnit().getKcal();
     }
 
+    /**
+     * Adds log to the diary dates
+     * @param log the desired log to be added
+     */
     public void addLog(DiaryLog log) {
         logs.add(log);
         refreshKcalTotal();
     }
 
+    /**
+     * Removes log from the diary date
+     * @param i index of the diary date in the arraylist
+     */
     public void removeLog(int i) {
         logs.remove(i);
         refreshKcalTotal();

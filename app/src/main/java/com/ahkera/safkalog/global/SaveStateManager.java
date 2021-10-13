@@ -27,6 +27,10 @@ public class SaveStateManager {
         return sharedPrefs.contains(SAVE_STATE);
     }
 
+    /**
+     * Saves the state of the GlobalInstance to json, and adds it to the shared preferences
+     * @param context Context
+     */
     public static void saveState(Context context) {
         SharedPreferences sharedPrefs =
             context.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE);
@@ -39,6 +43,10 @@ public class SaveStateManager {
         editor.commit();
     }
 
+    /**
+     * Loads the saved "image" of the GlobalInstance and sets it as the current state of it.
+     * @param context Context
+     */
     public static void loadState(Context context) {
 
         SharedPreferences sharedPrefs =

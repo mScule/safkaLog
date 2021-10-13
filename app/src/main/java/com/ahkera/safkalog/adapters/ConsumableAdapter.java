@@ -32,6 +32,7 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
         this.mOnConsumableListener = mOnConsumableListener;
     }
 
+    /** The method that inflates the layout from the contactholder */
     @NonNull
     @Override
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,6 +41,11 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
         return new ContactHolder(view, mOnConsumableListener);
     }
 
+    /***
+     * Binds the given information to the contact holder layout
+     * @param holder the contactholder that holds the custom layout
+     * @param position the location of the item in the arraylist
+     */
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
         final Consumable consumable = consumables.get(position);
@@ -68,6 +74,7 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
         holder.setEatableName(consumable.getName());
     }
 
+    /** Gets the item count */
     @Override
     public int getItemCount() {
         return consumables == null ? 0 : consumables.size();
@@ -78,6 +85,7 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
         private TextView eatableType, eatableName;
         private OnConsumableListener onConsumableListener;
 
+        /** binds the click event and views */
         public ContactHolder(@NonNull View itemView, OnConsumableListener onConsumableListener) {
             super(itemView);
 
@@ -88,9 +96,12 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
             itemView.setOnClickListener(this);
         }
 
+        /** Setter for the type */
         public void setEatableType(String eatableType) {
             this.eatableType.setText(eatableType);
         }
+
+        /** Setter for the name */
         public void setEatableName(String eatableName) {
             this.eatableName.setText(eatableName);
         }
@@ -101,6 +112,7 @@ public class ConsumableAdapter extends RecyclerView.Adapter<ConsumableAdapter.Co
         }
     }
 
+    /** Interface for giving the change of creating custom click events */
     public interface OnConsumableListener {
         void onConsumableClick(int position);
     }

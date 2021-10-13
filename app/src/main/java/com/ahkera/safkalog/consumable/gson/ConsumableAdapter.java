@@ -21,6 +21,14 @@ import java.lang.reflect.Type;
  */
 public class ConsumableAdapter implements JsonSerializer<Consumable>, JsonDeserializer<Consumable> {
 
+    /**
+     * Serializes the consumable the right way, by adding the information about what type of
+     * consumable the object actually is.
+     * @param consumable The consumable that will be serialized
+     * @param type Type
+     * @param context Serialization context
+     * @return Consumable as a JsonElement
+     */
     @Override
     public JsonElement serialize(Consumable consumable, Type type, JsonSerializationContext context) {
         JsonObject result = new JsonObject();
@@ -29,6 +37,14 @@ public class ConsumableAdapter implements JsonSerializer<Consumable>, JsonDeseri
         return result;
     }
 
+    /**
+     * Deserializes the JsonElement to Consumable
+     * @param jsonElement The JsonElement that will be deserialized
+     * @param type Type
+     * @param context Serialization context
+     * @return The consumable as a object
+     * @throws JsonParseException parsing exception
+     */
     @Override
     public Consumable deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context) throws JsonParseException {
         JsonObject json = jsonElement.getAsJsonObject();

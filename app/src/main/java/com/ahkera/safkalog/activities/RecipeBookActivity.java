@@ -48,6 +48,10 @@ public class RecipeBookActivity extends AppCompatActivity implements ConsumableA
         recyclerView.setAdapter(new ConsumableAdapter(recipes, this, this::onConsumableClick));
     }
 
+    /**
+     * Binds given click event to right recyclerview item by the consumable adapter
+     * @param position the position in the arraylist
+     */
     @Override
     public void onConsumableClick(int position) {
         Gson gson = GsonSingleton.getInstance().gson;

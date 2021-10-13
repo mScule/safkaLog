@@ -28,6 +28,7 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
         this.context   = context;
     }
 
+    /** The method that inflates the layout from the contactholder */
     @NonNull
     @Override
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -36,6 +37,11 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
         return new ContactHolder(view);
     }
 
+    /***
+     * Binds the given information to the contact holder layout
+     * @param holder the contactholder that holds the custom layout
+     * @param position the location of the item in the arraylist
+     */
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
         final DiaryLog diaryLog = diaryLogs.get(position);
@@ -45,6 +51,7 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
         holder.setLogTime(diaryLog.getTime());
     }
 
+    /** Gets the item count */
     @Override
     public int getItemCount() {
         return diaryLogs == null ? 0 : diaryLogs.size();
@@ -53,6 +60,7 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
     public class ContactHolder extends RecyclerView.ViewHolder {
         private TextView eatableName, eatableKcal, logTime;
 
+        /** binds the views */
         public ContactHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -61,13 +69,17 @@ public class DiaryLogAdapter extends RecyclerView.Adapter<DiaryLogAdapter.Contac
             logTime     = itemView.findViewById(R.id.it_diaryLog_tv_logTime);
         }
 
+        /** Setter for the name */
         public void setEatableName(String eatableName) {
             this.eatableName.setText(eatableName);
         }
+
+        /** Setter for the kcal */
         public void setEatableKcal(String eatableKcal) {
             this.eatableKcal.setText(eatableKcal);
         }
 
+        /** Setter for the time */
         public void setLogTime(String logTime) {
             this.logTime.setText(logTime);
         }
